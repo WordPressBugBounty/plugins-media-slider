@@ -1,0 +1,149 @@
+/* Add New Image Slide CSS Admin */
+.new-media-slider {
+	float:left;
+	height: 160px;
+	width: 160px;
+	overflow: hidden;
+	background-color: #ea0000;
+	color: #FFF !important;
+	text-align: center;
+	padding-top: 2% !important;
+	padding-bottom: 3% !important;
+	padding-left: 2% !important;
+	padding-right: 2% !important;
+	margin-bottom: 2%;
+	margin-left: 5%;
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(234, 39, 39, 1);
+	-moz-box-shadow: 10px 10px 5px 0px rgba(234, 39, 39, 1);
+	box-shadow: 10px 10px 5px 0px rgba(234, 39, 39, 1);
+	cursor:pointer
+}
+
+.new-media-slider .dashicons {
+	text-align: center !important;
+	margin-left : 8%;	
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(234, 39, 39, 1);
+	-moz-box-shadow: 10px 10px 5px 0px rgba(234, 39, 39, 1);
+	box-shadow: 10px 10px 5px 0px rgba(234, 39, 39, 1);
+	background-color : #ea0000;
+	border-radius : 15px;
+	font-size: 100px;
+	color : #fff;
+}
+
+
+.add-text {
+	float:left;
+	height: 25px;
+	width: 200px;
+	overflow: hidden;
+	color: #000 !important;
+	text-align: center;
+	margin-bottom: 2% !important;
+	margin-top: 12.5% !important;
+	margin-left: -12.5% !important;
+	cursor: pointer;
+	text-align:center !important;
+	font-size: 25px !important;
+	font-family: Geneva;
+}
+
+
+/* All Slider Gallery CSS Admin */
+.mediabox {
+	float:left;
+	width:100%;
+	margin-left: 20px;
+}
+
+.mediabox .media-slide {
+	margin: 0 5% 5% 0;
+	width:20%;
+	cursor:move;
+	float:left;
+}
+
+.mediabox img {
+	width: 160px;
+	height: 160px;
+	display:block;
+	margin-bottom:10px;
+}
+
+.new-media-slide {
+	margin: 0 15px 15px 0;
+	width: 28%;
+	cursor: move;
+	float: left;
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(234, 39, 39, 1);
+	-moz-box-shadow: 10px 10px 5px 0px rgba(234, 39, 39, 1);
+	box-shadow: 10px 10px 5px 0px rgba(234, 39, 39, 1);	
+}
+
+/* For desktop: */
+@media (max-width:768px) {
+	.mediabox .media-slide {
+		margin: 0 15px 15px 0;
+		padding: 10px;
+		width: 35%;
+		cursor:move;
+		float:left;
+	}
+	.mediabox img {
+		width: 160px;
+		height: 160px;
+	}
+}
+/* For mobile phones: */
+@media (max-width:500px) {
+	.mediabox .media-slide {
+		margin: 0 15px 15px 0;
+		padding: 10px;
+		width:90%;
+		cursor:move;
+		float:left;
+	}
+	.mediabox img {
+		width: 160px;
+		height: 160px;
+	}
+}
+
+/* Settings CSS */
+.input-text-wrap {
+	margin-top: 30px;
+	margin-left: 15px;
+}
+.input-text-wrap input[type=text] {
+	width: 50%;
+	border: 1px solid #3366FF;
+	border-left: 6px solid #3366FF;
+}
+.input-text-wrap input[type=radio] {
+	border: 1px solid #3366FF;
+	margin-bottom: 6px;
+}
+.input-text-wrap label {
+	font-size: 14px;
+	font-weight: bolder;
+}
+/* Delete All Slide Button */
+#remove-all-media-slides {
+	float: right;
+	color: #FFF;
+	border-color: #D9534F;
+	background: #D9534F;
+	background-color: #D9534F;
+	-webkit-box-shadow: inset 0 1px 0 #D9534F,0 1px 0 rgba(0,0,0,.08);
+	box-shadow: inset 0 1px 0 #D9534F,0 1px 0 rgba(0,0,0,.08);
+	vertical-align: top;
+}
+#remove-media-slide {
+	color: #FFF;
+	border-color: #D9534F;
+	background: #D9534F;
+	background-color: #D9534F;
+	-webkit-box-shadow: inset 0 1px 0 #D9534F,0 1px 0 rgba(0,0,0,.08);
+	box-shadow: inset 0 1px 0 #D9534F,0 1px 0 rgba(0,0,0,.08);
+	vertical-align: top;
+}

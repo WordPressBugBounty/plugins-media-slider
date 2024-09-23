@@ -1,0 +1,561 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2018-08-09 17:04+0530\n"
+"PO-Revision-Date: 2018-08-09 17:04+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
+"X-Poedit-KeywordsList: __;_e;_x\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# rating
+#. translators: 1: The rating
+#: featured-plugins/featured-plugins.php:96
+#, php-format
+msgid "%s rating"
+msgstr ""
+
+#: featured-plugins/featured-plugins.php:111
+msgid "Get More Free WordPress Plugin From A WP Life"
+msgstr "A WP Life से अधिक मुफ्त वर्डप्रेस प्लगइन प्राप्त करें"
+
+#. translators: 1: Plugin name and version.
+#: featured-plugins/featured-plugins.php:157
+msgid "More Details"
+msgstr "अधिक जानकारी"
+
+#. translators: 1: Plugin name and version.
+#: featured-plugins/featured-plugins.php:168
+msgid "Install Now"
+msgstr "अभी स्थापित करें"
+
+#. translators: 1: Plugin name and version
+#: featured-plugins/featured-plugins.php:175
+msgid "Update Now"
+msgstr "अभी आधुनिकतम करें"
+
+#: featured-plugins/featured-plugins.php:180
+msgid "Installed"
+msgstr "स्थापित"
+
+#: featured-plugins/featured-plugins.php:218
+msgid "By "
+msgstr ""
+
+#: featured-plugins/featured-plugins.php:239
+msgid "Last Updated:"
+msgstr "आखरी अपडेट:"
+
+#: media-slider-code.php:131 media-slider-code.php:153
+#, fuzzy
+#| msgid "Sorry! No media slider found "
+msgid "Sorry! No media slider found"
+msgstr "माफ़ कीजिये! कोई मीडिया स्लाइडर नहीं मिला"
+
+#: media-slider-settings.php:95
+msgid "Slider Settings"
+msgstr "खिसकाना व्यवस्था"
+
+#: media-slider-settings.php:102
+msgid "Width"
+msgstr "चौड़ाई"
+
+#: media-slider-settings.php:105
+#, fuzzy
+#| msgid "Set the slider frame preview width. Default is 960."
+msgid "Set the slider frame preview width(Default is 960)"
+msgstr "स्लाइडर फ्रेम पूर्वावलोकन चौड़ाई सेट करें। डिफ़ॉल्ट 960 है।"
+
+#: media-slider-settings.php:109
+msgid "Height"
+msgstr "ऊंचाई"
+
+#: media-slider-settings.php:112
+#, fuzzy
+#| msgid "Set the slider frame preview height. Default is 540."
+msgid "Set the slider frame preview height(Default is 540)"
+msgstr "स्लाइडर फ्रेम पूर्वावलोकन ऊंचाई सेट करें। डिफ़ॉल्ट 540 है।"
+
+#: media-slider-settings.php:116
+msgid "Auto Height"
+msgstr "स्वत: ऊंचाई"
+
+#: media-slider-settings.php:120 media-slider-settings.php:145 media-slider-settings.php:181
+#: media-slider-settings.php:205 media-slider-settings.php:268
+msgid "On"
+msgstr "चालू"
+
+#: media-slider-settings.php:122 media-slider-settings.php:147 media-slider-settings.php:183
+#: media-slider-settings.php:207 media-slider-settings.php:270
+msgid "Off"
+msgstr "बंद"
+
+#: media-slider-settings.php:123 media-slider-settings.php:160
+msgid "Select if the image can be scaled up more than its original size"
+msgstr "चुने अगर छवि को इसके मूल आकार से अधिक बढ़ाया जा सकता है"
+
+#: media-slider-settings.php:128
+msgid "Image Scale Mode"
+msgstr "छवि मापक साधन"
+
+#: media-slider-settings.php:132
+msgid "Cover"
+msgstr "आवरण"
+
+#: media-slider-settings.php:134 media-slider-settings.php:294 media-slider-settings.php:433
+#: media-slider-settings.php:445
+msgid "None"
+msgstr "कोई नहीं"
+
+#: media-slider-settings.php:135
+#, fuzzy
+#| msgid "Sets the scale mode of the main slide images (images added as background)."
+msgid "Sets the scale mode of the main slide images (images added as background)"
+msgstr "मुख्य स्लाइड छवियों के पैमाने मोड (पृष्ठभूमि के रूप में जोड़े गए चित्र) सेट करता है।"
+
+#: media-slider-settings.php:141
+msgid "Image Centered"
+msgstr "छवि मध्य"
+
+#: media-slider-settings.php:148
+msgid "Select if the image will be centered"
+msgstr "चुनें कि छवि केंद्रित होगी या नहीं"
+
+#: media-slider-settings.php:153
+msgid "ScaleUp"
+msgstr "स्केल अप"
+
+#: media-slider-settings.php:157 media-slider-settings.php:169 media-slider-settings.php:224
+#: media-slider-settings.php:236
+msgid "Yes"
+msgstr "हाँ"
+
+#: media-slider-settings.php:159 media-slider-settings.php:171 media-slider-settings.php:226
+#: media-slider-settings.php:238
+msgid "No"
+msgstr "नहीं"
+
+#: media-slider-settings.php:165
+msgid "Auto Slide Size"
+msgstr "स्वत: स्लाइड आकार"
+
+#: media-slider-settings.php:172
+#, fuzzy
+#| msgid ""
+#| "Select if all the slides are at the same height but will allow the width of the slides to "
+#| "be variable."
+msgid ""
+"Select if all the slides are at the same height but will allow the width of the slides to be "
+"variable"
+msgstr "चुनें कि सभी स्लाइड एक ही ऊंचाई पर हैं, लेकिन स्लाइड की चौड़ाई को परिवर्तनीय होने की अनुमति होगी"
+
+#: media-slider-settings.php:177
+msgid "Shuffle"
+msgstr "मिश्रण"
+
+#: media-slider-settings.php:184
+msgid "Select if the slides will be shuffled"
+msgstr "चुनें कि स्लाइड्स को घुमाया जाएगा या नहीं"
+
+#: media-slider-settings.php:189
+msgid "Slide Caption"
+msgstr "स्लाइड शीर्षक"
+
+#: media-slider-settings.php:193 media-slider-settings.php:317 media-slider-settings.php:329
+#: media-slider-settings.php:353 media-slider-settings.php:394 media-slider-settings.php:467
+msgid "Show"
+msgstr "प्रदर्शन"
+
+#: media-slider-settings.php:195 media-slider-settings.php:319 media-slider-settings.php:331
+#: media-slider-settings.php:355 media-slider-settings.php:396 media-slider-settings.php:469
+msgid "Hide"
+msgstr "छिपाना"
+
+#: media-slider-settings.php:196
+msgid "Select if the slide caption will be displayed"
+msgstr "चुनें कि स्लाइड शीर्षक प्रदर्शित किया जाएगा या नहीं"
+
+#: media-slider-settings.php:201
+msgid "Slider loop"
+msgstr "स्लाइड लूप"
+
+#: media-slider-settings.php:208
+msgid "Select if the slider will be loopable"
+msgstr "चुनें कि स्लाइडर पाश सक्षम होगा या नहीं"
+
+#: media-slider-settings.php:213
+msgid "Slide Visible Size (in %)"
+msgstr "स्लाइड प्रकट आकार (% में)"
+
+#: media-slider-settings.php:216
+#, fuzzy
+#| msgid ""
+#| "Select if the size of the visible area, allowing for more slides to become visible near "
+#| "the selected slide. Default is auto."
+msgid ""
+"Select if the size of the visible area, allowing for more slides to become visible near the "
+"selected slide (Default is auto)"
+msgstr ""
+"चुनें कि दृश्य क्षेत्र का आकार, चयनित स्लाइड्स के पास और अधिक स्लाइड के लिए दृश्यमान होने की इजाजत देता है। "
+"डिफ़ॉल्ट ऑटो है।"
+
+#: media-slider-settings.php:220
+msgid "Wait For Layers"
+msgstr "परतों के लिए प्रतीक्षा करें"
+
+#: media-slider-settings.php:227
+msgid "Select if the slider will wait for the layers to disappear before going to a new slide"
+msgstr "अगर नई स्लाइडर पर जाने से पहले स्लाइडर परतों को गायब होने का इंतजार करेगी तो चुनें"
+
+#: media-slider-settings.php:232
+msgid "Auto Scale Layers"
+msgstr "स्वत पैमाना परतें"
+
+#: media-slider-settings.php:239
+#, fuzzy
+#| msgid "Select if the slider layers will be scaled automatically."
+msgid "Select if the slider layers will be scaled automatically"
+msgstr "चुनें कि स्लाइडर परतों को स्वचालित रूप से स्केल किया जाएगा या नहीं"
+
+#: media-slider-settings.php:244
+msgid "Custom CSS"
+msgstr "प्रचलन सीएसएस"
+
+#: media-slider-settings.php:257
+msgid "Autoplay Settings"
+msgstr "स्वत: चालु करना व्यवस्था"
+
+#: media-slider-settings.php:264
+msgid "Autoplay"
+msgstr "स्वत: चालु"
+
+#: media-slider-settings.php:271
+#, fuzzy
+#| msgid "Select if or not slide autoplay will be enabled."
+msgid "Select if or not slide autoplay will be enabled"
+msgstr "चुनें कि स्लाइड स्वत: चालु सक्षम होगा या नहीं"
+
+#: media-slider-settings.php:276
+msgid "Autoplay Delay"
+msgstr "स्वत: चालु विलंब"
+
+#: media-slider-settings.php:281
+#, fuzzy
+#| msgid ""
+#| "Sets the delay/interval (in milliseconds) at which the slide autoplay will run. Default "
+#| "is 5000."
+msgid ""
+"Sets the delay/interval (in milliseconds) at which the slide autoplay will run (Default is "
+"5000)"
+msgstr "विलंब / अंतराल (मिलीसेकंड में) सेट करता है जिस पर स्लाइड स्वत: चलाएगा। डिफ़ॉल्ट 5000 है।"
+
+#: media-slider-settings.php:286
+msgid "Autoplay OnHover"
+msgstr "स्वत: चालु उड्डयिमान"
+
+#: media-slider-settings.php:290
+msgid "Pause"
+msgstr "ठहराव"
+
+#: media-slider-settings.php:292
+msgid "Stop"
+msgstr "रुकें"
+
+#: media-slider-settings.php:295
+msgid "Select if the slide autoplay will be paused or stopped when the slider is hovered"
+msgstr "स्लाइडर आच्छादित होने पर स्लाइड स्वत: चालु को रोका या रोक दिया जाएगा या नहीं"
+
+#: media-slider-settings.php:306
+msgid "Navigation Settings"
+msgstr "पथ प्रदर्शन व्यवस्था"
+
+#: media-slider-settings.php:313
+msgid "Arrows"
+msgstr "तीर"
+
+#: media-slider-settings.php:320
+#, fuzzy
+#| msgid "Select if the slider arrow buttons will be created."
+msgid "Select if the slider arrow buttons will be created"
+msgstr "चुनें कि स्लाइडर तीर बटन बनाए जाएंगे या नहीं"
+
+#: media-slider-settings.php:325
+msgid "FullScreen Button"
+msgstr "पूर्णस्क्रीन बटन"
+
+#: media-slider-settings.php:332
+msgid "Select if the slider full-screen button is enabled"
+msgstr "चुनें कि स्लाइडर पूर्ण-स्क्रीन बटन सक्षम है या नहीं"
+
+#: media-slider-settings.php:342
+msgid "Thumbnail Settings"
+msgstr "थंबनेल व्यवस्था"
+
+#: media-slider-settings.php:349
+msgid "Thumbnails"
+msgstr "थंबनेल"
+
+#: media-slider-settings.php:356
+msgid "Select if the thumbnails are displayed"
+msgstr "अगर थंबनेल प्रदर्शित होते हैं तो चुनें"
+
+#: media-slider-settings.php:363
+msgid "Thumbnail Width"
+msgstr "थंबनेल की चौड़ाई"
+
+#: media-slider-settings.php:366
+#, fuzzy
+#| msgid "Sets the width of the thumbnail. Default is 100."
+msgid "Sets the width of the thumbnail(Default is 100)"
+msgstr "थंबनेल की चौड़ाई सेट करता है। डिफ़ॉल्ट 100 है।"
+
+#: media-slider-settings.php:371
+msgid "Thumbnail Height"
+msgstr "थंबनेल ऊंचाई"
+
+#: media-slider-settings.php:374
+#, fuzzy
+#| msgid "Sets the height of the thumbnail. Default is 80."
+msgid "Sets the height of the thumbnail(Default is 80)"
+msgstr "थंबनेल की ऊंचाई सेट करता है। डिफ़ॉल्ट 80 है।"
+
+#: media-slider-settings.php:378
+msgid "Thumbnail Position"
+msgstr "थंबनेल स्थिति"
+
+#: media-slider-settings.php:382 media-slider-settings.php:479
+msgid "Top"
+msgstr "चोटी"
+
+#: media-slider-settings.php:384
+msgid "bottom"
+msgstr "तल"
+
+#: media-slider-settings.php:385
+msgid "Sets the position of the thumbnail scroller"
+msgstr "थंबनेल स्क्रोलर की स्थिति सेट करता है"
+
+#: media-slider-settings.php:390
+msgid "Thumbnail Arrows"
+msgstr "थंबनेल तीर"
+
+#: media-slider-settings.php:397
+msgid "Select if the thumbnail arrows will be enabled"
+msgstr "चुनें कि थंबनेल तीर सक्षम होंगे या नहीं"
+
+#: media-slider-settings.php:402
+msgid "Thumbnail TouchSwipe"
+msgstr "थंबनेल टचस्वाइप"
+
+#: media-slider-settings.php:406
+msgid "Enable"
+msgstr "सक्षम करें"
+
+#: media-slider-settings.php:408
+msgid "Disable"
+msgstr "अक्षम"
+
+#: media-slider-settings.php:409
+msgid "Select if the touch swipe will be enabled for thumbnails"
+msgstr "अगर थंबनेल के लिए स्पर्श स्वाइप सक्षम किया जाएगा तो चुनें"
+
+#: media-slider-settings.php:420
+msgid "Video Settings"
+msgstr "वीडियो व्यवस्था"
+
+#: media-slider-settings.php:427
+msgid "Video Action - Play"
+msgstr "वीडियो एक्शन - प्ले"
+
+#: media-slider-settings.php:431
+msgid "Stop Autoplay"
+msgstr "ऑटोप्ले रोकें"
+
+#: media-slider-settings.php:434
+msgid "Sets the action that the slider will perform when the video starts playing"
+msgstr "वीडियो चालू होने पर स्लाइडर प्रदर्शन करेगा कि कार्रवाई करता है"
+
+#: media-slider-settings.php:439
+msgid "Video Action - Pause"
+msgstr "वीडियो एक्शन - रोकें"
+
+#: media-slider-settings.php:443
+msgid "Start Autoplay"
+msgstr "ऑटोप्ले शुरू करें"
+
+#: media-slider-settings.php:446
+msgid "Sets the action that the slider will perform when the video is paused"
+msgstr "उस वीडियो को सेट करता है जब वीडियो रोक दिया जाता है जब स्लाइडर प्रदर्शन करेगा"
+
+#: media-slider-settings.php:456
+msgid "Textarea Settings"
+msgstr "पाठ क्षेत्र व्यवस्था"
+
+#: media-slider-settings.php:463
+msgid "Title / Description"
+msgstr "शीर्षक वर्णन"
+
+#: media-slider-settings.php:470
+msgid "Select if the Title / Description are displayed"
+msgstr "चुनें कि शीर्षक / विवरण प्रदर्शित होते हैं या नहीं"
+
+#: media-slider-settings.php:475
+msgid "Title / Description Position"
+msgstr "शीर्षक / विवरण स्थिति"
+
+#: media-slider-settings.php:482
+msgid "Right"
+msgstr "ठीक"
+
+#: media-slider-settings.php:485
+msgid "Bottom"
+msgstr "नीचे"
+
+#: media-slider-settings.php:486
+msgid "Select the position where the title / description will be displayed"
+msgstr "उस स्थिति का चयन करें जहां शीर्षक / विवरण प्रदर्शित किया जाएगा"
+
+#: media-slider-settings.php:663
+msgid "Plugin Bale Offer"
+msgstr "प्लग-इन गांठ प्रस्ताव"
+
+#: media-slider-settings.php:664
+msgid "Get All Premium Plugin ( Personal Licence) in just $149"
+msgstr "केवल $ 14 9 में सभी प्रीमियम प्लगइन (व्यक्तिगत लाइसेंस) प्राप्त करें"
+
+#: media-slider-settings.php:665
+msgid "For $149 Only"
+msgstr "केवल $ 14 9 के लिए"
+
+#: media-slider-settings.php:668
+msgid "BUY NOW"
+msgstr "अभी खरीदें"
+
+#: media-slider-settings.php:673
+msgid "Try Our Other Plugins:"
+msgstr "हमारे अन्य प्लगइन्स आज़माएं:"
+
+#: media-slider.php:47 media-slider.php:108 media-slider.php:109 media-slider.php:110
+#: media-slider.php:111 media-slider.php:116 media-slider.php:125
+msgid "Media Slider"
+msgstr "मीडिया स्लाइडर"
+
+#: media-slider.php:97
+msgid "Docs"
+msgstr "प्रलेखन"
+
+#: media-slider.php:98
+msgid "Featured-Plugin"
+msgstr "विशेष रुप से प्रदर्शित-प्लगइन"
+
+#: media-slider.php:98
+msgid "Featured Plugin"
+msgstr "विशेष रुप से प्रदर्शित-प्लगइन"
+
+#: media-slider.php:99
+msgid "Our Theme"
+msgstr "हमारी थीम"
+
+#: media-slider.php:112
+#, fuzzy
+#| msgid "Parent Item:"
+msgid "Parent Item"
+msgstr "अभिभावक वस्तु"
+
+#: media-slider.php:113
+msgid "All Media Slider"
+msgstr "सभी मीडिया स्लाइडर"
+
+#: media-slider.php:114 media-slider.php:115
+msgid "Add Media Slider"
+msgstr "मीडिया स्लाइडर जोड़ें"
+
+#: media-slider.php:117
+msgid "Edit Media Slider"
+msgstr "मीडिया स्लाइडर संपादित करें"
+
+#: media-slider.php:118
+msgid "Update Media Slider"
+msgstr "अद्यतन मीडिया स्लाइडर"
+
+#: media-slider.php:119
+msgid "Search Media Slider"
+msgstr "खोज मीडिया स्लाइडर"
+
+#: media-slider.php:120
+msgid "Media Slider Not found"
+msgstr "मीडिया स्लाइडर नहीं मिला"
+
+#: media-slider.php:121
+msgid "Media Slider Not found in Trash"
+msgstr "ट्रैश में मीडिया स्लाइडर नहीं मिला"
+
+#: media-slider.php:126
+msgid "Custom Post Type For Media Slider"
+msgstr "मीडिया स्लाइडर के लिए कस्टम पोस्ट प्रकार"
+
+#: media-slider.php:153
+msgid "Add Image/Poster"
+msgstr "छवि / पोस्टर जोड़ें"
+
+#: media-slider.php:154
+msgid "Upgrade Media Slider Pro"
+msgstr "मीडिया स्लाइडर प्रो उन्नत करें"
+
+#: media-slider.php:155
+msgid "Rate Our Plugin"
+msgstr "हमारे प्लगइन को प्रमाण करें"
+
+#: media-slider.php:166
+msgid "If you like our plugin then please"
+msgstr "यदि आप हमारी प्लगइन पसंद करते हैं तो कृपया"
+
+#: media-slider.php:166
+msgid "Rate us"
+msgstr "हमें प्रमाण दें"
+
+#: media-slider.php:166
+msgid "on WordPress"
+msgstr "वर्डप्रेस पर"
+
+#: media-slider.php:190
+msgid "Delete All Images"
+msgstr "सभी छवियों को हटाएं"
+
+#: media-slider.php:207 media-slider.php:253
+msgid "Image"
+msgstr "छवि"
+
+#: media-slider.php:208 media-slider.php:254
+msgid "Video"
+msgstr "वीडियो"
+
+#: media-slider.php:225
+msgid "Add Image / Poster"
+msgstr "छवि / पोस्टर जोड़ें"
+
+#: media-slider.php:228
+msgid "Copy Media Slider Shortcode"
+msgstr "कॉपी मीडिया स्लाइडर शोर्टकोड"
+
+#: media-slider.php:231
+#, fuzzy
+#| msgid ""
+#| "Copy & Embed shotcode into any Page/ Post / Text Widget to display your media slider on "
+#| "site."
+msgid ""
+"Copy & Embed shotcode into any Page/ Post / Text Widget to display your media slider on site"
+msgstr ""
+"साइट पर अपने मीडिया स्लाइडर को प्रदर्शित करने के लिए किसी भी पेज / पोस्ट / टेक्स्ट विजेट में शोर्टकोड कॉपी "
+"और एम्बेड करें"
+
+#: media-slider.php:237
+msgid "Media Slider Setting"
+msgstr "मीडिया स्लाइडर व्यवस्था"
