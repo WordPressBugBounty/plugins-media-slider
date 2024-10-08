@@ -2,8 +2,8 @@
 Contributors: awordpresslife, razipathhan, hanif0991, muhammadshahid, fkfaisalkhan007, sharikkhan007, zishlife, FARAZFRANK
 Donate link: https://paypal.me/awplife
 Tags: image slider, responsive slider, video slider, content slider, Carousal Slideshow,
-Tested up to: 6.6.1
-Stable tag: 1.4.4
+Tested up to: 6.6.2
+Stable tag: 1.4.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -156,6 +156,10 @@ The following are other recommended plugins by the author:
 * [Facebook Like Box Plugin](https://wordpress.org/plugins/facebook-likebox-widget-and-shortcode/ "Facebook Likebox Plugin") - Facebook Light Box Plugin For WordPress 
 
 == Changelog ==
+
+= 1.4.5 =
+
+* Testing plugin for wordpress 6.6.2
 
 = 1.4.4 =
 
