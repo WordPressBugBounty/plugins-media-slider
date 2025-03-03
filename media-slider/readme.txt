@@ -7,7 +7,7 @@ Stable tag: 1.4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Amazing and easy to use slider plugin for WordPress websites. Responsive image slider, video slider, link slider, slide thumbnails, carousal, and autoplay.
+Amazing & easy-to-use WordPress slider plugin. Create responsive image, video, link sliders, thumbnails, carousels & autoplay with ease!
 
 == Description ==
 
