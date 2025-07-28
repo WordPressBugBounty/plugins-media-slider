@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) {
 Plugin Name: Media Slider
 Plugin URI: http://awplife.com/
 Description: The best images slider plugin with image and video slideshow support.
-Version: 1.5.0
+Version: 1.5.1
 Author: A WP Life
 Author URI: https://awplife.com/
 Text Domain: media-slider
@@ -43,13 +43,13 @@ if (!class_exists('Awl_Media_Slider')) {
 		{
 
 			// Plugin Version
-			define('MS_PLUGIN_VER', '1.5.0');
+			define('MS_PLUGIN_VER', '1.5.1');
 
 			// Plugin Text Domain
 			define('MSP_TXTDM', 'media-slider');
 
 			// Plugin Name
-			define('MS_PLUGIN_NAME', __('Media Slider', MSP_TXTDM));
+			define('MS_PLUGIN_NAME', 'Media Slider');
 
 			// Plugin Slug
 			define('MS_PLUGIN_SLUG', 'media_slider');
@@ -76,7 +76,7 @@ if (!class_exists('Awl_Media_Slider')) {
 		{
 
 			// Load Text Domain
-			add_action('plugins_loaded', array($this, '_load_textdomain'));
+			add_action('init', array($this, '_load_textdomain'));
 
 			// Add Slider Menu Item
 			add_action('admin_menu', array($this, '_srgallery_menu'));
