@@ -1,584 +1,200 @@
-﻿=== Media Slider - Photo Slider, Video Slider, Link Slider, Carousal Slideshow ===
+﻿=== Slider for Photos Images Videos ===
 Contributors: awordpresslife, razipathhan, hanif0991, muhammadshahid, fkfaisalkhan007, sharikkhan007, zishlife, FARAZFRANK
 Donate link: https://paypal.me/awplife
-Tags: image slider, responsive slider, video slider, content slider, Carousal Slideshow,
-Tested up to: 6.8.2
+Tags: slider, image slider, video slider, responsive slider, slideshow
+Requires at least: 5.0
+Tested up to: 6.9
 Stable tag: 1.5.1
+Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Amazing & easy-to-use WordPress slider plugin. Create responsive image, video, link sliders, thumbnails, carousels & autoplay with ease!
+Create responsive image and video sliders with thumbnails, navigation, autoplay, and carousel layouts for your site.
 
 == Description ==
 
-= Image Slideshow Video Slideshow Carousal Slideshow Link Slideshow Slider =
+Media Slider helps you create engaging image and video slideshows for your WordPress site. Whether you want to showcase a photo gallery, display product images, or embed video content, this slider handles it all in one place.
 
-The Media Slider - Amazing and Easy to use WordPress Slider Plugin. WordPress Media Slider Plugin to Create Image Slider, Content Slider, Video Slideshow with Responsive Design. It is very simple to create slider for your WordPress site, you can add videos and images, as well as, add a slider to the posts, pages and template files. The slider allows to have unlimited amount of images. Media slider is the best plugin for show images and video in one slider, then you don't need two different plugins for images and for videos.
+**View Free Demo:** **[Media Slider](https://awplife.com/demo/media-slider-free-wordpress-plugin)** | **View Pro Demo:** **[Media Slider Pro](https://awplife.com/demo/media-slider-premium/)** 
+**Learn More About Pro:** **[Media Slider Pro](https://awplife.com/wordpress-plugins/media-slider-premium/)** | **Purchase Pro:** **[Buy Slider Factory Pro](https://awplife.com/account/signup/media-slider-premium)**
 
-With this WordPress Plugin, you can show your photos and videos more beautifully, because this Media Slider has so many configurations you can set many designs with of your slider with this plugin. With this plugin you can show titles and descriptions of your images, this plugin also has many settings for title and description, you can also show image thumbnails on slider and thumbnails with description.
-
-It is very easy in use for new and old users, it has more configurations setting you can see below.
+The plugin works with images from your media library and supports YouTube and Vimeo videos. You can add unlimited slides to each slider and display them anywhere using a simple shortcode. Each slide can include a title, description, and custom link.
 
 https://www.youtube.com/watch?v=wBYgUQxpsPs
 
-Slider - A Responsive Multimedia Amazing Easy To Use Irresistible CSS & JS Based WordPress Image / Video Slider Plugin. 
+**What You Can Create:**
 
-It provides a powerful engine for adding images or video slides, with the ability to batch upload, import media data, add/delete/rearrange/sort slides and more. You can publish slider at front-end on the blog post, page and in all widget areas available in the theme.
+* Image slideshows with smooth transitions
+* Video slideshows (YouTube, Vimeo supported)
+* Mixed media sliders (images + videos together)
+* Carousel layouts with multiple visible slides
+* Thumbnail navigation sliders
+* Full-width and boxed sliders
 
-Create slider from plugin admin dashboard and copy the slider generated shortcode from bottom add image / video button. Embed copied slider shortcode into any blog Page, post, widget area and publish on your blog.
+**Key Features (Free Version):**
+
+* Responsive design that adapts to all screen sizes
+* Fade and slide transition effects
+* Previous/Next navigation arrows
+* Thumbnail navigation option
+* Custom slider dimensions
+* Autoplay with adjustable speed
+* Full-screen slider mode
+* Widget support for sidebars
+* Works with any WordPress theme
+* No coding required
+
+**Pro Version Features:**
+
+The premium version includes additional customization options for professional websites:
+
+* 4+ navigation arrow styles
+* 3+ thumbnail display styles
+* 9+ text position options for slide captions
+* Advanced video controls (autoplay, loop, mute)
+* Breakpoint settings for different devices
+* 3+ image scaling modes
+* Force size option to maintain exact dimensions
+* Priority support
 
 
-**Check Free Media Slider Plugin Demo - <a href="https://awplife.com/demo/media-slider-free-wordpress-plugin">Click Here</a>**
 
-**Check Premium Media Slider Plugin Demo - <a href="https://awplife.com/demo/media-slider-premium/">Click Here</a>**
+**Free vs Pro Comparison:**
 
-**Upgrade To Premium Plugin - <a href="https://awplife.com/wordpress-plugins/media-slider-premium/">Click Here</a>**
+*Free Version:*
+* Unlimited sliders and slides
+* Image and video support
+* Basic navigation (arrows, thumbnails)
+* Fade effect
+* Responsive design
+* Widget ready
+* Shortcode embed
 
-**Features**
+*Pro Version (Everything in Free, plus):*
+* Multiple navigation styles
+* Multiple thumbnail styles
+* Advanced text positioning
+* Video autoplay and loop controls
+* Device-specific breakpoints
+* Image scaling options
+* Dedicated support
 
-* Responsive Slider Design
-* Customization
-* Full-Screen Slider
-* Fade Effect
-* Video Slider
-* Slider Widget
-* Slider Navigation
-* Slider Thumbnail
-* Slider With Breakpoints
-* Slider With Text-area
-* Slider With Force Size
-* Many Customization Settings
-* Embed Slider Into any your theme template
-* Standard WordPress Import and Export 
-* Cross Browser Compatibility
+**How to Use:**
+
+1. Go to Media Slider menu in your dashboard
+2. Click "Add New Slider" to create a slider
+3. Upload images or add video URLs
+4. Configure slider settings as needed
+5. Copy the shortcode and paste it in any page or post
 
 **Support**
 
-It community-driven project that would not be the same without your feedback. If you have any problem or feature request for this plugin, please feel free to <a href="http://awplife.com/contact/">contact us!</a>
-
-**Premium Features**
-
-* Responsive Design
-* Custom Width & Height
-* Breakpoints
-* Auto-play
-* Video Supported
-* Fade Effect
-* 4+ Navigation Styles
-* 3+ Image Scale Mode
-* 3+ Thumbnail Styles
-* 5+ Video Options
-* Slider Force Size
-* 9+ Slide Text Position
-* Slider With Text-area
-* Slider Customization Settings
-* Slider In Widgets
-
-Slider is fully responsive friendly. All your images will appear as beautiful sliders on your WordPress website. 
+Have questions or found a bug? Post your query on our [support forum](http://awplife.com/contact/). We respond to all requests within 24-48 hours.
 
 == Installation ==
 
-Install Responsive Media Slider either via the WordPress.org plugin directory or by uploading the files to your server.
-
-After activating Media Slider, go to plugin menu.
-
-Click Add Media Slider and upload image slides.
-
-Publish the slider and copy media slider shortcode from the bottom of the slider setting and embed shortcode on any Page/Post/Text Widget.
-
-That's it. You're ready to go!
+1. Upload the plugin folder to `/wp-content/plugins/` directory, or install directly through the WordPress plugins screen.
+2. Activate the plugin through the 'Plugins' menu in WordPress.
+3. Navigate to Media Slider in your admin menu.
+4. Click "Add New Slider" and start adding your images or videos.
+5. Configure slider settings according to your needs.
+6. Copy the generated shortcode from the slider settings page.
+7. Paste the shortcode into any page, post, or text widget where you want the slider to appear.
 
 == Frequently Asked Questions ==
 
-Have any queries?
+= How do I create a new slider? =
+Go to Media Slider in your WordPress dashboard, click "Add New Slider", upload your images or add video URLs, configure the settings, and save. You will get a shortcode to embed the slider anywhere on your site.
 
-Please post your question on plugin support forum
+= Can I add both images and videos in the same slider? =
+Yes, Media Slider supports mixed media. You can combine images from your media library with YouTube and Vimeo videos in a single slider.
 
-https://wordpress.org/support/plugin/media-slider/
+= Is the slider mobile responsive? =
+Yes, the slider automatically adjusts to fit any screen size. Your slides will look good on desktops, tablets, and mobile phones.
+
+= How do I display the slider on my website? =
+After creating a slider, copy the shortcode shown at the bottom of the slider settings page. Paste this shortcode into any page, post, or text widget where you want the slider to appear.
+
+= Can I customize the navigation arrows? =
+The free version includes standard navigation arrows. The Pro version offers 4+ different arrow styles to match your site design.
+
+= What video platforms are supported? =
+The plugin supports YouTube and Vimeo videos. Simply paste the video URL when adding a new slide.
+
+= How many sliders can I create? =
+There is no limit. You can create as many sliders as you need, each with unlimited slides.
+
+= Can I add text captions to my slides? =
+Yes, each slide supports a title and description. The Pro version offers 9+ text positioning options for precise placement.
+
+= Does this work with page builders? =
+Yes, you can use the shortcode in any page builder that supports shortcodes, including Elementor, Beaver Builder, and Divi.
+
+= How do I enable autoplay? =
+In the slider settings, look for the autoplay option and enable it. You can also set the delay time between slides.
+
+= Can I show thumbnails below the slider? =
+Yes, thumbnail navigation is available in both free and Pro versions. Enable it from the slider settings.
+
+= What is the difference between free and Pro version? =
+The free version includes all core features for creating image and video sliders. The Pro version adds more navigation styles, thumbnail styles, advanced text positioning, video controls, and priority support.
 
 == Screenshots ==
 
-1. Slider Preview
-2. Slider Preview
-3. Slider Preview
-4. Slider Preview
-
-= Recommended Plugins =
-
-The following are other recommended plugins by the author:
-
-* [Portfolio Filter Gallery](https://wordpress.org/plugins/portfolio-filter-gallery/ "Best Portfolio Filter Gallery") - The Gallery Plugin to create awesome Portfolio Filter Gallery Plugin in minutes. 
-
-*Buy Premium Plugin - <a href="https://awplife.com/wordpress-plugins/portfolio-filter-gallery-premium/">Click Here</a>*
-
-* [Media Slider](https://wordpress.org/plugins/media-slider/ "Best Media Slider") - The Media Slider Plugin to create Media / Video Slider Gallery Plugin in minutes. 
-
-*Buy Premium Plugin - <a href="https://awplife.com/wordpress-plugins/media-slider-premium/">Click Here</a>*
-
-* [Best Weather Effect Plugin](https://wordpress.org/plugins/weather-effect/ "Best Weather Effect Plugin") - Very Simple And Easy To Design Your Sites With Multiple Effects.
-
-*Buy Premium Plugin - <a href="https://awplife.com/wordpress-plugins/weather-effect-premium/">Click Here</a>*
-
-* [Best Grid Gallery Plugin](https://wordpress.org/plugins/new-grid-gallery/ "Best Grid Galley Plugin") - Easy Grid Gallery Widget - Displaying your image in Page & Post widget/sidebar area with very easy.Allows you to customize it to looking exactly what you want.
-
-*Buy Premium Plugin - <a href="https://awplife.com/wordpress-plugins/grid-gallery-premium/">Click Here</a>*
-
-* [Image Gallery Plugin](https://wordpress.org/plugins/new-image-gallery/ "Image Gallery Plugin") - Gallery Lightbox - Displays all gallery images into the lightbox slider in just a few seconds.
-
-*Buy Premium Plugin - <a href="https://awplife.com/wordpress-plugins/image-gallery-premium/">Click Here</a>*
-
-* [Photo Gallery Plugin](https://wordpress.org/plugins/new-photo-gallery/ "Image Gallery Plugin") - Displays all  Photo Gallery, Video Gallery, Link Gallery, Map Gallery into WordPress in just a few seconds.
-
-*Buy Premium Plugin - <a href="https://awplife.com/wordpress-plugins/photo-gallery-premium/">Click Here</a>*
-
-* [Slider Plugin](https://wordpress.org/plugins/responsive-slider-gallery/ "Slider Plugin") - Fully Responsive Slider Gallery For WordPress ,You can Show Slider Into Page/Post & Widget/Sidebar By Generate Shortcode.
-
-*Buy Premium Plugin - <a href="https://awplife.com/wordpress-plugins/responsive-slider-gallery-premium/">Click Here</a>*
-
-* [Contact Form](https://wordpress.org/plugins/new-contact-form-widget/ "Contact Form Plugin") - Contact Form Widget Shortcode Plugin For WordPress.
-
-*Buy Premium Plugin - <a href="https://awplife.com/wordpress-plugins/contact-form-premium/">Click Here</a>*
-
-* [Social Media Plugin](https://wordpress.org/plugins/new-social-media-widget/ "Social Media") - Display your Social Media Plugin into Widget/Sidebar in WordPress site with very easily.
-
-*Buy Premium Plugin - <a href="https://awplife.com/wordpress-plugins/social-media-widget-premium//">Click Here</a>*
-
-* [Best Responsive Slider Plugin](https://wordpress.org/plugins/slider-responsive-slideshow/ "Responsive Slider Plugin") - Fully Responsive Light Weight Easy Powerful WordPress Slider Slideshow Plugin.
-
-*Buy Premium Plugin - <a href="https://awplife.com/wordpress-plugins/slider-responsive-slideshow-premium//">Click Here</a>*
-
-* [Video Gallery Plugin](https://wordpress.org/plugins/new-video-gallery/ "Best Video Gallery Plugin") - The Best Responsive video gallery For WordPress.
-
-*Buy Premium Plugin - <a href="https://awplife.com/wordpress-plugins/video-gallery-premium/">Click Here</a>*
-
-* [Facebook Like Share Follow Button](https://wordpress.org/plugins/new-facebook-like-share-follow-button/ "Facebook Like Share Follow Button") - Display your Facebook Like Share Follow Button Plugin into Page/Post & Widget/Sidebar in WordPress sites with very easily.
- 
-* [Facebook Like Box Plugin](https://wordpress.org/plugins/facebook-likebox-widget-and-shortcode/ "Facebook Likebox Plugin") - Facebook Light Box Plugin For WordPress 
+1. Slider Preview - Frontend display
+2. Slider Preview - With thumbnails
+3. Slider Preview - Video slider
+4. Slider Preview - Admin settings
 
 == Changelog ==
 
 = 1.5.1 =
 * Text domain error fixed.
-* Testing plugin for wordpress 6.8.2
+* Tested with WordPress 6.8.3
 
 = 1.5.0 =
-* Bug Fix: Fixed.
-* Testing plugin for wordpress 6.8.1
+* Bug fixes.
+* Tested with WordPress 6.8.1
 
 = 1.4.9 =
-* Bug Fix: Fixed.
-* Testing plugin for wordpress 6.7.2
+* Bug fixes.
+* Tested with WordPress 6.7.2
 
 = 1.4.8 =
-* Bug Fix: Fixed.
+* Bug fixes.
 * New plugin icons and banner updated.
-* Testing plugin for wordpress 6.7.1
+* Tested with WordPress 6.7.1
 
 = 1.4.7 =
-* Bug Fix: Fixed.
-* Additional changes: None.
-* Testing plugin for wordpress 6.7.1
+* Bug fixes.
+* Tested with WordPress 6.7.1
 
 = 1.4.6 =
-* Bug Fix: Fixed.
-* Additional changes: None.
-* Testing plugin for wordpress 6.6.2
+* Bug fixes.
+* Tested with WordPress 6.6.2
 
 = 1.4.5 =
-
-* Testing plugin for wordpress 6.6.2
+* Tested with WordPress 6.6.2
 
 = 1.4.4 =
-
-* Testing plugin for wordpress 6.6.1
+* Tested with WordPress 6.6.1
 
 = 1.4.3 =
-
-* Testing plugin for wordpress 6.5.4
+* Tested with WordPress 6.5.4
 
 = 1.4.2 =
-
-* multiple gallery shortcode issues fixed.
-* Testing plugin for wordpress 6.4.3
+* Fixed multiple gallery shortcode issues.
+* Tested with WordPress 6.4.3
 
 = 1.4.1 =
-
-* wordpress security issues fixed.
-* Testing plugin for wordpress 6.4.3
+* Security improvements.
+* Tested with WordPress 6.4.3
 
 = 1.4.0 =
-
-* wordpress security issues fixed.
-* Testing plugin for wordpress 6.4.3
-
-= 1.3.9 =
-
-* Bug Fix: Fixed.
-* Additional changes: None.
-* Testing plugin for wordpress 6.4.3
-
-= 1.3.8 =
-
-* Bug Fix: Fixed.
-* Additional changes: None.
-* Testing plugin for wordpress 6.4.2
-
-= 1.3.7 =
-
-* Bug Fix: Fixed.
-* Additional changes: None.
-* Testing plugin for wordpress 6.4.2
-
-= 1.3.6 =
-
-* Tested On Wordpress Version 6.3.2
-
-= 1.3.5 =
-
-* Tested On Wordpress Version 6.3.1
-
-= 1.3.4 =
-
-* Tested On Wordpress Version 6.2.2
-
-= 1.3.3 =
-
-* Tested On Wordpress Version 6.2.1
-* Codding bugs fixed.
-
-= 1.3.2 =
-
-* Tested On Wordpress Version 6.1.1
-
-= 1.3.1 =
-
-* Codding bugs fixed.
-* Tested On Wordpress Version 6.0.3
-
-= 1.3.0 =
-
-* wordpress security issues fixed.
-
-= 1.2.9 =
-
-* Enhancements: Tested for WordPress 6.0.1
-
-= 1.2.8 =
-
-* Enhancements: Tested for WordPress 5.9.3
-
-= 1.2.7 =
-
-* Enhancements: Tested for WordPress 5.9
-
-= 1.2.6 =
-
-* Enhancements: Tested for WordPress 5.8.2
-* wordpress security isshues fixed
-
-= 1.2.5 =
-
-* Enhancements: Tested for WordPress 5.8.1
-
-= 1.2.4 =
-
-* Fixed Security issues.
-* Bug Fix: Fixed.
-* Enhancements: Yes,
-
-= 1.2.2 =
-* Enhancements: Tested for WordPress 5.7.2
-
-= 1.2.1 =
-* Enhancements: Tested for WordPress 5.7.1
-
-= 1.2.0 =
-* Enhancements: Tested for WordPress 5.7
-
-= 1.1.10 =
-* Enhancements: Tested for WordPress 5.6.2
-
-= 1.1.9 =
-* Enhancements: Tested for WordPress 5.6
-* Bug Fix: fixed.
-
-= 1.1.8 =
-* Enhancements: Tested for WordPress 5.5.3
-* Bug Fix: fixed.
-
-= 1.1.7 =
-* Enhancements: Tested for WordPress 5.5.3
-
-= 1.1.6 =
-* Enhancements: Tested for WordPress 5.5.1
-
-= 1.1.5 =
-* Enhancements: Tested for WordPress 5.5
-* Bug Fix: miner issue fixed.
-
-
-= 1.1.4 =
-* Enhancements: Tested for WordPress 5.4.2
-
-= 1.1.3 =
-* Enhancements: Tested for WordPress 5.4.1
-* Additional Changes: JS Library Update
-* Bug Fix: Vimeo https fix
-
-= 1.1.2 =
-* Enhancements: Tested for WordPress 5.4
-
-= 1.1.1 =
-* Enhancements: Tested for WordPress 5.3.2
-
-= 1.1.0 =
-* Enhancements: Tested for WordPress 5.3.2
-
-= 1.0.10 =
-* Enhancements: Tested for WordPress 5.2.3
-
-= 1.0.9 =
-* Enhancements: Tested for WordPress 5.2.3
-
-= 1.0.8 =
-* Enhancements: Tested for WordPress 5.2.2
-* Bug Fix: fixed.
-* Additional changes: None.
-
-= 1.0.7 =
-* Enhancements: Tested for WordPress 5.2.2
-* Bug Fix: fixed.
-* Additional changes: None.
-
-= 1.0.6 =
-* Enhancements: None
-* Bug Fix: fixed.
-* Additional changes: None.
-
-= 1.0.5 =
-* Enhancements: None
-* Bug Fix: fixed.
-* Additional changes: None.
-
-= 1.0.4 =
-* Enhancements: None
-* Bug Fix: fixed.
-* Additional changes: None.
-
-= 1.0.3 =
-* Enhancements: None
-* Bug Fix: fixed.
-* Additional changes: None.
-
-= 1.0.2 =
-* Enhancements: None
-* Bug Fix: fixed.
-* Additional changes: None.
-
-= 1.0.1 =
-* Enhancements: None
-* Bug Fix: missing cursor files added into plugin. Video slide icon fixed.
-* Additional changes: None.
-
-= 1.0.0 =
-* Enhancements: None
-* Bug Fix: Yes,
-* Additional changes: None.
-
-= 0.4.2 =
-* Enhancements: None
-* Bug Fix: Yes, Description text updating bug fixed
-* Additional changes: None.
-
-= 0.4.1 =
-* Enhancements: Yes, Tested for WordPress 5.0.3
-* Bug Fix: Yes
-* Additional changes: None.
-
-= 0.4.0 =
-* Enhancements: Yes, Tested for WordPress 5.0.2
-* Bug Fix: Yes
-* Additional changes: None.
-
-= 0.3.9 =
-* Enhancements: Yes, Tested for WordPress 5.0.1
-* Bug Fix: no
-* Additional changes: None.
-
-= 0.3.8 =
-* Enhancements: Yes, Tested for WordPress 4.9.8
-* Bug Fix: no
-* Additional changes: custome shortcode copy function added.
-
-= 0.3.7 =
-* Enhancements: Yes, Tested for WordPress 4.9.8
-* Bug Fix: no
-* Additional changes: update links
-
-= 0.3.6 =
-* Enhancements: Yes, Tested for WordPress 4.9.8
-* Bug Fix: Yes
-* Additional changes: No
-
-= 0.3.3 =
-* Enhancements: Yes, Tested for WordPress 4.9
-* Bug Fix: None
-* Additional changes: Yes, Translation Ready
-
-= 0.3.3 =
-* Enhancements: Yes, Tested for WordPress 4.9
-* Bug Fix: None
-* Additional changes: Yes, Added Featured page
-
-= 0.3.2 =
-* Enhancements: Yes, Tested for WordPress 4.9
-* Bug Fix: None
-* Additional changes: Yes, Added theme page
-
-Feature Enhancements: Version 0.3.1
-* Enhancements: None
-* Bug Fix: bug fixed.
-* Additional changes: None
-
-Feature Enhancements: Version 0.3.0
-* Enhancements: None
-* Bug Fix: bug fixed.
-* Additional changes: None
-
-Feature Enhancements: Version 0.2.9
-* Enhancements: None
-* Bug Fix: yes, link and bug fixed.
-* Additional changes: None
-
-Feature Enhancements: Version 0.2.8
-* Enhancements: None
-* Bug Fix: None
-* Additional changes: None
-
-Feature Enhancements: Version 0.2.7
-* Enhancements: Tested Upto New version 4.8.1
-* Bug Fix: None
-* Additional changes: None
-
-Feature Enhancements: Version 0.2.6
-* Enhancements: None
-* Bug Fix: None
-* Additional changes: None
-
-Feature Enhancements: Version 0.2.5
-* Enhancements: None
-* Bug Fix: None
-* Additional changes: None
-
-Feature Enhancements: Version 0.2.4
-* Enhancements: New version for WordPress 4.8
-* Bug Fix: None
-* Additional changes: None
-
-Feature Enhancements: Version 0.2.3
-* Enhancements: New version for WordPress 4.8
-* Bug Fix: None
-* Additional changes: None
-
-Feature Enhancements: Version 0.2.2
-* Enhancements: None
-* Bug Fix: None
-* Additional changes: None
-
-Feature Enhancements: Version 0.2.1
-* Enhancements: None
-* Bug Fix: None
-* Additional changes: None
-
-Feature Enhancements: Version 0.2.0
-* Enhancements: None
-* Bug Fix: None
-* Additional changes: None
-
-Feature Enhancements: Version 0.1.9
-* Enhancements: None
-* Bug Fix: None
-* Additional changes: None
-
-Feature Enhancements: Version 0.1.8
-* Enhancements: None
-* Bug Fix: None
-* Additional changes: None
-
-Feature Enhancements: Version 0.1.7
-* Enhancements: None
-* Bug Fix: None
-* Additional changes: None
-
-Feature Enhancements: Version 0.1.6
-* Enhancements: None
-* Bug Fix: None
-* Additional changes: None
-
-Feature Enhancements: Version 0.1.5
-* Enhancements: None
-* Bug Fix: None
-* Additional changes: None
-
-Feature Enhancements: Version 0.1.4
-* Enhancements: None
-* Bug Fix: None
-* Additional changes: None
-
-Feature Enhancements: Version 0.1.2
-* Enhancements: Compatible For New Version
-* Bug Fix: None
-* Additional changes: None
-
-Feature Enhancements: Version 0.1.0
-* Enhancements: Compatible For New Version
-* Bug Fix: None
-* Additional changes: None
-
-Feature Enhancements: Version 0.0.9
-* Enhancements: Compatible For New Version
-* Bug Fix: None
-* Additional changes: None
-
-Feature Enhancements: Version 0.0.8
-* Enhancements: None
-* Bug Fix: Description problem resolved.
-* Additional changes: None
-
-Feature Enhancements: Version 0.0.7
-* Enhancements: None
-* Bug Fix: None
-* Additional changes: None
-
-Feature Enhancements: Version 0.0.6
-* Enhancements: None
-* Bug Fix: None
-* Additional changes: None
-
-Feature Enhancements: Version 0.0.5
-* Enhancements: None
-* Bug Fix: None
-* Additional changes: None
-
-Feature Enhancements: Version 0.0.4
-* Enhancements: None
-* Bug Fix: None
-* Additional changes: None
-
-Feature Enhancements: Version 0.0.3
-* Enhancements: None
-* Bug Fix: Textarea Position Problem Fixed.
-* Additional changes: None
-
-Feature Enhancements: Version 0.0.2
-* Enhancements: None
-* Bug Fix: None
-* Additional changes: None
-
-Feature Enhancements: Version 0.0.1
-* Enhancements: None
-* Bug Fix: None
-* Additional changes: None
+* Security improvements.
+* Tested with WordPress 6.4.3
 
 == Upgrade Notice ==
-This is an initial release. Start with version 0.0.1 and share your feedback <a href="https://wordpress.org/support/view/plugin-reviews/media-slider//">here</a>.
+
+= 1.5.1 =
+Text domain fix and WordPress 6.8.3 compatibility. Update recommended.
