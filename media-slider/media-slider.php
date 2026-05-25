@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) {
 Plugin Name: Media Slider
 Plugin URI: http://awplife.com/
 Description: The best images slider plugin with image and video slideshow support.
-Version: 1.5.1
+Version: 1.6.0
 Author: A WP Life
 Author URI: https://awplife.com/
 Text Domain: media-slider
@@ -43,7 +43,7 @@ if (!class_exists('Awl_Media_Slider')) {
 		{
 
 			// Plugin Version
-			define('MS_PLUGIN_VER', '1.5.1');
+			define('MS_PLUGIN_VER', '1.6.0');
 
 			// Plugin Text Domain
 			define('MSP_TXTDM', 'media-slider');
@@ -69,6 +69,32 @@ if (!class_exists('Awl_Media_Slider')) {
 
 		} // end of constructor function
 
+		public static function get_slider_settings($post_id)
+		{
+			$post_id = intval($post_id);
+			$encodedData = get_post_meta($post_id, 'awl_ms_settings_' . $post_id, true);
+			if (empty($encodedData)) {
+				return array();
+			}
+
+			// 1. Try to base64-decode the raw metadata
+			$decodedData = base64_decode($encodedData, true);
+
+			// 2. If it is serialized (legacy format), unserialize it
+			if ($decodedData !== false && is_serialized($decodedData)) {
+				return unserialize($decodedData);
+			}
+
+			// 3. Fallback: Check if the raw data itself is serialized
+			if (is_serialized($encodedData)) {
+				return unserialize($encodedData);
+			}
+
+			// 4. Otherwise, handle it as standard JSON
+			$slider_settings = json_decode($encodedData, true);
+			return is_array($slider_settings) ? $slider_settings : array();
+		}
+
 		/**
 		 * Setup the default filters and actions
 		 */
@@ -78,8 +104,6 @@ if (!class_exists('Awl_Media_Slider')) {
 			// Load Text Domain
 			add_action('init', array($this, '_load_textdomain'));
 
-			// Add Slider Menu Item
-			add_action('admin_menu', array($this, '_srgallery_menu'));
 
 			// Create Media Slider Pro Custom Post
 			add_action('init', array($this, '_Media_Slider'));
@@ -102,6 +126,10 @@ if (!class_exists('Awl_Media_Slider')) {
 
 			add_action('wp_enqueue_scripts', array(&$this, 'media_enqueue_scripts_in_header'));
 
+			add_action('admin_enqueue_scripts', array($this, 'admin_enqueue_scripts'));
+
+			add_action('admin_menu', array($this, '_srgallery_menu'));
+
 		} // end of hook function
 
 		public function media_enqueue_scripts_in_header()
@@ -109,16 +137,39 @@ if (!class_exists('Awl_Media_Slider')) {
 			wp_enqueue_script('jquery');
 		}
 
+		public function admin_enqueue_scripts($hook)
+		{
+			global $post_type;
+			if ('media_slider' === $post_type) {
+				wp_enqueue_style('ms-bootstrap-css', MS_PLUGIN_URL . 'css/ms-bootstrap.css');
+				wp_enqueue_style('ms-font-awesome-min-css', MS_PLUGIN_URL . 'css/font-awesome.min.css');
+				wp_enqueue_style('ms-styles-css', MS_PLUGIN_URL . 'css/styles.css');
+				wp_enqueue_style('ms-go-to-top-css', MS_PLUGIN_URL . 'css/go-to-top.css');
+				wp_enqueue_style('ms-toogle-button-css', MS_PLUGIN_URL . 'css/toogle-button.css');
+				wp_enqueue_style('awl-em-pe-icon-7-stroke-css', MS_PLUGIN_URL . 'css/pe-icon-7-stroke.css');
+				wp_enqueue_script('jquery');
+				wp_enqueue_script('ms-bootstrap-js', MS_PLUGIN_URL . 'js/bootstrap.js', array('jquery'), '', true);
+				wp_enqueue_script('ms-go-to-top-js', MS_PLUGIN_URL . 'js/go-to-top.js', array('jquery'), '', true);
+
+				wp_enqueue_script('media-upload');
+				wp_enqueue_script('awl-ms-uploader.js', MS_PLUGIN_URL . 'js/awl-ms-uploader.js', array('jquery'));
+				wp_enqueue_style('awl-ms-uploader-css', MS_PLUGIN_URL . 'css/awl-ms-uploader.css');
+				wp_enqueue_style('style-css', MS_PLUGIN_URL . 'css/styles.css');
+				wp_enqueue_media();
+			}
+
+			if (strpos($hook, 'ms-plugins-page') !== false || strpos($hook, 'ms-themes-page') !== false) {
+				wp_enqueue_style('our-plugins-style', MS_PLUGIN_URL . 'css/our-plugins-style.css');
+			}
+		}
+
 		// media slider cpt shortcode column before date columns
 		public function set_media_slider_shortcode_column_name($defaults)
 		{
 			$new = array();
-			$shortcode = $columns['media_slider_shortcode'];  // save the tags column
-			unset($defaults['tags']);   // remove it from the columns list
-
 			foreach ($defaults as $key => $value) {
-				if ($key == 'date') {  // when we find the date column
-					$new['media_slider_shortcode'] = __('Shortcode', 'media-slider');  // put the tags column before it
+				if ($key == 'date') {
+					$new['media_slider_shortcode'] = __('Shortcode', 'media-slider');
 				}
 				$new[$key] = $value;
 			}
@@ -131,8 +182,8 @@ if (!class_exists('Awl_Media_Slider')) {
 			switch ($column) {
 				case 'media_slider_shortcode':
 					echo "<input type='text' class='button button-primary' id='media-slider-shortcode-" . esc_attr($post_id) . "' value='[MDSL id=" . esc_attr($post_id) . "]' style='font-weight:bold; background-color:#32373C; color:#FFFFFF; text-align:center;' />";
-					echo "<input type='button' class='button button-primary' onclick='return  MEDIACopyShortcode" . esc_attr($post_id) . "();' readonly value='Copy' style='margin-left:4px;' />";
-					echo "<span id='copy-msg-" . esc_attr($post_id) . "' class='button button-primary' style='display:none; background-color:#32CD32; color:#FFFFFF; margin-left:4px; border-radius: 4px;'>copied</span>";
+					echo "<input type='button' class='button button-primary' onclick='return  MEDIACopyShortcode" . esc_attr($post_id) . "();' readonly value='" . esc_attr__( 'Copy', 'media-slider' ) . "' style='margin-left:4px;' />";
+					echo "<span id='copy-msg-" . esc_attr($post_id) . "' class='button button-primary' style='display:none; background-color:#32CD32; color:#FFFFFF; margin-left:4px; border-radius: 4px;'>" . esc_html__( 'copied', 'media-slider' ) . "</span>";
 					echo '<script>
 						function  MEDIACopyShortcode' . esc_attr($post_id) . "() {
 							var copyText = document.getElementById('media-slider-shortcode-" . esc_attr($post_id) . "');
@@ -154,12 +205,6 @@ if (!class_exists('Awl_Media_Slider')) {
 			load_plugin_textdomain('media-slider', false, dirname(plugin_basename(__FILE__)) . '/languages');
 		}
 
-		public function _srgallery_menu()
-		{
-			$help_menu = add_submenu_page('edit.php?post_type=' . MS_PLUGIN_SLUG, __('Docs', 'media-slider'), __('Docs', 'media-slider'), 'administrator', 'sr-doc-page', array($this, '_ms_doc_page'));
-			$ms_featured_plugin_menu = add_submenu_page('edit.php?post_type=' . MS_PLUGIN_SLUG, __('Featured-Plugin', 'media-slider'), __('Featured Plugin', 'media-slider'), 'administrator', 'sr--media-featured-plugin-page', array($this, '_ms_featured_plugin_page'));
-			$theme_menu = add_submenu_page('edit.php?post_type=' . MS_PLUGIN_SLUG, __('Our Theme', 'media-slider'), __('Our Theme', 'media-slider'), 'administrator', 'sr-theme-page', array($this, '_ms_theme_page'));
-		}
 
 		/**
 		 * Media Slider Custom Post
@@ -230,7 +275,7 @@ if (!class_exists('Awl_Media_Slider')) {
 				<?php esc_html_e('Shortcode copied to clipboard!', 'media-slider'); ?>
 			</p>
 			<p style="margin-top: 10px">
-				<?php esc_html_e('Copy & Embed shotcode into any Page/ Post / Text Widget to display slider.', 'rmedia-slider'); ?>
+				<?php esc_html_e('Copy & Embed shortcode into any Page / Post / Text Widget to display slider.', 'media-slider'); ?>
 			</p>
 			</p>
 			<span onclick="copyToClipboard('#shortcode')" class="ms-copy dashicons dashicons-clipboard"></span>
@@ -310,12 +355,6 @@ if (!class_exists('Awl_Media_Slider')) {
 
 		public function ms_upload_multiple_images($post)
 		{
-			wp_enqueue_script('media-upload');
-			wp_enqueue_script('awl-ms-uploader.js', MS_PLUGIN_URL . 'js/awl-ms-uploader.js', array('jquery'));
-			wp_enqueue_style('awl-ms-uploader-css', MS_PLUGIN_URL . 'css/awl-ms-uploader.css');
-			wp_enqueue_style('style-css', MS_PLUGIN_URL . 'css/styles.css');
-			wp_enqueue_style('awl-em-pe-icon-7-stroke-css', MS_PLUGIN_URL . 'css/pe-icon-7-stroke.css');
-			wp_enqueue_media();
 			?>
 			<div id="media-slider-gallery">
 				<input type="button" id="remove-all-media-slides" name="remove-all-media-slides"
@@ -323,81 +362,53 @@ if (!class_exists('Awl_Media_Slider')) {
 					value="<?php esc_html_e('Delete All Images', 'media-slider'); ?>">
 				<ul id="remove-media-slides" class="mediabox">
 					<?php
-					$post_id = esc_attr($post->ID);
+					$post_id = intval($post->ID);
+					$slider_settings = self::get_slider_settings($post_id);
 
-					function is_ms_serialized($str)
-					{
-						return($str == serialize(false) || @unserialize($str) !== false);
-					}
-
-					// Retrieve the base64 encoded data
-					$encodedData = get_post_meta($post_id, 'awl_ms_settings_' . $post_id, true);
-
-					// Decode the base64 encoded data
-					$decodedData = base64_decode($encodedData);
-
-					// Check if the data is serialized
-					if (is_ms_serialized($decodedData)) {
-
-						// The data is serialized, so unserialize it
-						$slider_settings = unserialize($decodedData);
-						// Optionally, convert the unserialized data to JSON and save it back in base64 encoding for future access
-						// This step is optional but recommended to transition your data format
-		
-						$jsonEncodedData = json_encode($slider_settings);
-						update_post_meta($post_id, 'awl_ms_settings_' . $post_id, $jsonEncodedData);
-
-						// Now, to use the newly saved format, fetch and decode again
-						$encodedData = get_post_meta($post_id, 'awl_ms_settings_' . $post_id, true);
-						$slider_settings = json_decode(($encodedData), true);
-
-					} else {
-						// Assume the data is in JSON format
-						$jsonData = get_post_meta($post_id, 'awl_ms_settings_' . $post_id, true);
-						// Decode the JSON string into an associative array
-						$slider_settings = json_decode($jsonData, true); // Ensure true is passed to get an associative array
-					}
-					if (isset($slider_settings['media-slide-ids'])) {
+					if (isset($slider_settings['media-slide-ids']) && is_array($slider_settings['media-slide-ids'])) {
 						$count = 0;
 						foreach ($slider_settings['media-slide-ids'] as $id) {
+							$id = intval($id);
 							$thumbnail = wp_get_attachment_image_src($id, 'medium', true);
+							$thumbnail_url = is_array($thumbnail) ? $thumbnail[0] : '';
 							$attachment = get_post($id);
-							$slide_link = $slider_settings['media-slide-link'][$count];
-							$slide_type = $slider_settings['media-slide-type'][$count];
+							$slide_link = isset($slider_settings['media-slide-link'][$count]) ? $slider_settings['media-slide-link'][$count] : '';
+							$slide_type = isset($slider_settings['media-slide-type'][$count]) ? $slider_settings['media-slide-type'][$count] : 'i';
+							$slide_title = $attachment ? $attachment->post_title : (isset($slider_settings['media-slide-title'][$count]) ? $slider_settings['media-slide-title'][$count] : '');
+							$slide_desc = $attachment ? $attachment->post_content : (isset($slider_settings['media-slide-desc'][$count]) ? $slider_settings['media-slide-desc'][$count] : '');
 							?>
 							<li class="media-slide">
-								<img class="new-media-slide" src="<?php echo esc_url($thumbnail[0]); ?>"
-									alt="<?php echo esc_html(get_the_title($id)); ?>"
+								<img class="new-media-slide" src="<?php echo esc_url($thumbnail_url); ?>"
+									alt="<?php echo esc_html($slide_title); ?>"
 									style="height: 150px; width: 98%; border-radius: 8px;">
-								<input type="hidden" id="media-slide-ids[]" name="media-slide-ids[]"
+								<input type="hidden" name="media-slide-ids[]"
 									value="<?php echo esc_attr($id); ?>" />
 								<!-- Image Title, Caption, Alt Text-->
-								<select id="media-slide-type[]" name="media-slide-type[]" class="form-control" style="width: 100%;"
-									value="<?php echo esc_html($slide_type); ?>">
+								<select name="media-slide-type[]" class="form-control" style="width: 100%;">
 									<option value="i" <?php
 									if ($slide_type == 'i') {
-										echo 'selected=selected';
+										echo 'selected="selected"';
 									}
 									?>>
 										<?php esc_html_e('Image', 'media-slider'); ?>
 									</option>
 									<option value="v" <?php
 									if ($slide_type == 'v') {
-										echo 'selected=selected';
+										echo 'selected="selected"';
 									}
 									?>>
 										<?php esc_html_e('Video', 'media-slider'); ?>
 									</option>
 								</select>
-								<input type="text" name="media-slide-link[]" id="media-slide-link[]" style="width: 100%;"
+								<input type="text" name="media-slide-link[]" style="width: 100%;"
 									placeholder="<?php esc_html_e('Enter URL / ID', 'media-slider'); ?>"
 									value="<?php echo esc_url($slide_link); ?>">
-								<input type="text" name="media-slide-title[]" id="media-slide-title[]" style="width: 100%;"
+								<input type="text" name="media-slide-title[]" style="width: 100%;"
 									placeholder="<?php esc_html_e('Title Here', 'media-slider'); ?>"
-									value="<?php echo esc_html(get_the_title($id)); ?>">
-								<textarea name="media-slide-desc[]" id="media-slide-desc[]" style="width: 100%;"
-									placeholder="<?php esc_html_e('Enter Description', 'media-slider'); ?>"><?php echo esc_html($attachment->post_content); ?></textarea>
-								<input type="button" name="remove-media-slide" id="remove-media-slide"
+									value="<?php echo esc_html($slide_title); ?>">
+								<textarea name="media-slide-desc[]" style="width: 100%;"
+									placeholder="<?php esc_html_e('Enter Description', 'media-slider'); ?>"><?php echo esc_html($slide_desc); ?></textarea>
+								<input type="button" name="remove-media-slide"
 									class="button remove-single-media-slide button-danger" style="width: 100%;"
 									value="<?php esc_html_e('Delete', 'media-slider'); ?>">
 							</li>
@@ -435,36 +446,36 @@ if (!class_exists('Awl_Media_Slider')) {
 			// thumb, thumbnail, medium, large, post-thumbnail
 			$thumbnail = wp_get_attachment_image_src($id, 'medium', true);
 			$attachment = get_post($id); // $id = attachment id
+			$slide_type = 'i';
 			?>
 			<li class="media-slide">
 				<img class="new-media-slide" src="<?php echo esc_url($thumbnail[0]); ?>"
 					alt="<?php echo esc_html(get_the_title($id)); ?>" style="height: 150px; width: 98%; border-radius: 8px;">
-				<input type="hidden" id="media-slide-ids[]" name="media-slide-ids[]" value="<?php echo esc_attr($id); ?> )" />
-				<select id="media-slide-type[]" name="media-slide-type[]" class="form-control" style="width: 100%;"
-					placeholder="Image Title" value="<?php echo esc_html($slide_type); ?>">
+				<input type="hidden" name="media-slide-ids[]" value="<?php echo esc_attr($id); ?>" />
+				<select name="media-slide-type[]" class="form-control" style="width: 100%;">
 					<option value="i" <?php
 					if ($slide_type == 'i') {
-						echo 'selected=selected';
+						echo 'selected="selected"';
 					}
 					?>>
 						<?php esc_html_e('Image', 'media-slider'); ?>
 					</option>
 					<option value="v" <?php
 					if ($slide_type == 'v') {
-						echo 'selected=selected';
+						echo 'selected="selected"';
 					}
 					?>>
 						<?php esc_html_e('Video', 'media-slider'); ?>
 					</option>
 				</select>
-				<input type="text" name="media-slide-link[]" id="media-slide-link[]" style="width: 100%;"
+				<input type="text" name="media-slide-link[]" style="width: 100%;"
 					placeholder="<?php esc_html_e('Enter Image / Video URL', 'media-slider'); ?>">
-				<input type="text" name="media-slide-title[]" id="media-slide-title[]" style="width: 100%;"
+				<input type="text" name="media-slide-title[]" style="width: 100%;"
 					placeholder="<?php esc_html_e('Title Here', 'media-slider'); ?>"
 					value="<?php echo esc_html(get_the_title($id)); ?>">
-				<textarea name="media-slide-desc[]" id="media-slide-desc[]" style="width: 100%;"
-					placeholder="<?php esc_html_e('Enter Description', 'media-slider'); ?>"><?php echo esc_html($attachment->post_content); ?></textarea>
-				<input type="button" name="remove-media-slide" id="remove-media-slide" style="width: 100%;" class="button"
+				<textarea name="media-slide-desc[]" style="width: 100%;"
+					placeholder="<?php esc_html_e('Enter Description', 'media-slider'); ?>"><?php echo esc_html($attachment ? $attachment->post_content : ''); ?></textarea>
+				<input type="button" name="remove-media-slide" style="width: 100%;" class="button remove-single-media-slide button-danger"
 					value="<?php esc_html_e('Delete', 'media-slider'); ?>">
 			</li>
 			<?php
@@ -474,49 +485,68 @@ if (!class_exists('Awl_Media_Slider')) {
 		{
 			if (current_user_can('manage_options')) {
 				if (isset($_POST['msp_add_images_nonce']) && wp_verify_nonce($_POST['msp_add_images_nonce'], 'msp_add_images')) {
-					echo esc_attr($this->_ms_ajax_callback_function($_POST['slideId']));
+					$slide_id = isset($_POST['slideId']) ? intval($_POST['slideId']) : 0;
+					if ($slide_id > 0) {
+						$this->_ms_ajax_callback_function($slide_id);
+					}
+					wp_die();
 				} else {
-					print 'Sorry, your nonce did not verify.';
-					exit;
+					wp_die(__('Sorry, your nonce did not verify.', 'media-slider'), '', array('response' => 403));
 				}
 			}
+			wp_die();
 		}
 
 		public function _ms_save_settings($post_id)
 		{
+			// Guard against autosaves
+			if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+				return;
+			}
+
+			// Verify post type is media_slider
+			if (get_post_type($post_id) !== 'media_slider') {
+				return;
+			}
+
+			// Verify current user permissions to edit the slider post itself
+			if (!current_user_can('edit_post', $post_id)) {
+				return;
+			}
+
 			if (current_user_can('manage_options')) {
 				if (isset($_POST['ms_save_nonce'])) {
 					if (isset($_POST['ms_save_nonce']) && wp_verify_nonce($_POST['ms_save_nonce'], 'ms_save_settings')) {
 
-						$width = sanitize_text_field($_POST['width']);
-						$height = sanitize_text_field($_POST['height']);
-						$slide_autoheight = sanitize_text_field($_POST['slide_autoheight']);
-						$slide_imagescalemode = sanitize_text_field($_POST['slide_imagescalemode']);
-						$slide_imagecenter = sanitize_text_field($_POST['slide_imagecenter']);
-						$slide_scaleup = sanitize_text_field($_POST['slide_scaleup']);
-						$slide_autoslidesize = sanitize_text_field($_POST['slide_autoslidesize']);
-						$shuffle_slide = sanitize_text_field($_POST['shuffle_slide']);
-						$slide_caption = sanitize_text_field($_POST['slide_caption']);
-						$slide_loop = sanitize_text_field($_POST['slide_loop']);
-						$slide_visiblesize = sanitize_text_field($_POST['slide_visiblesize']);
-						$slide_waitforlayers = sanitize_text_field($_POST['slide_waitforlayers']);
-						$slide_autoscalelayers = sanitize_text_field($_POST['slide_autoscalelayers']);
-						$custom_css = sanitize_text_field($_POST['custom_css']);
-						$slide_autoplay = sanitize_text_field($_POST['slide_autoplay']);
-						$slide_autoplay_delay = sanitize_text_field($_POST['slide_autoplay_delay']);
-						$slide_autoplay_hover = sanitize_text_field($_POST['slide_autoplay_hover']);
-						$slide_arrows = sanitize_text_field($_POST['slide_arrows']);
-						$slide_fullscreen_btn = sanitize_text_field($_POST['slide_fullscreen_btn']);
-						$slide_thumb = sanitize_text_field($_POST['slide_thumb']);
-						$slide_thumb_width = sanitize_text_field($_POST['slide_thumb_width']);
-						$slide_thumb_height = sanitize_text_field($_POST['slide_thumb_height']);
-						$slide_thumb_pos = sanitize_text_field($_POST['slide_thumb_pos']);
-						$slide_thumb_arrows = sanitize_text_field($_POST['slide_thumb_arrows']);
-						$slide_thumb_touchswipe = sanitize_text_field($_POST['slide_thumb_touchswipe']);
-						$videoaction_play = sanitize_text_field($_POST['videoaction_play']);
-						$videoaction_pause = sanitize_text_field($_POST['videoaction_pause']);
-						$slide_text = sanitize_text_field($_POST['slide_text']);
-						$slide_text_pos = sanitize_text_field($_POST['slide_text_pos']);
+						$width = isset($_POST['width']) ? sanitize_text_field(wp_unslash($_POST['width'])) : '960';
+						$height = isset($_POST['height']) ? sanitize_text_field(wp_unslash($_POST['height'])) : '540';
+						$slide_autoheight = isset($_POST['slide_autoheight']) ? sanitize_text_field(wp_unslash($_POST['slide_autoheight'])) : 'true';
+						$slide_imagescalemode = isset($_POST['slide_imagescalemode']) ? sanitize_text_field(wp_unslash($_POST['slide_imagescalemode'])) : 'cover';
+						$slide_imagecenter = isset($_POST['slide_imagecenter']) ? sanitize_text_field(wp_unslash($_POST['slide_imagecenter'])) : 'true';
+						$slide_scaleup = isset($_POST['slide_scaleup']) ? sanitize_text_field(wp_unslash($_POST['slide_scaleup'])) : 'true';
+						$slide_autoslidesize = isset($_POST['slide_autoslidesize']) ? sanitize_text_field(wp_unslash($_POST['slide_autoslidesize'])) : 'false';
+						$shuffle_slide = isset($_POST['shuffle_slide']) ? sanitize_text_field(wp_unslash($_POST['shuffle_slide'])) : 'false';
+						$slide_caption = isset($_POST['slide_caption']) ? sanitize_text_field(wp_unslash($_POST['slide_caption'])) : 'true';
+						$slide_loop = isset($_POST['slide_loop']) ? sanitize_text_field(wp_unslash($_POST['slide_loop'])) : 'true';
+						$slide_visiblesize = isset($_POST['slide_visiblesize']) ? sanitize_text_field(wp_unslash($_POST['slide_visiblesize'])) : 'auto';
+						$slide_waitforlayers = isset($_POST['slide_waitforlayers']) ? sanitize_text_field(wp_unslash($_POST['slide_waitforlayers'])) : 'false';
+						$slide_autoscalelayers = isset($_POST['slide_autoscalelayers']) ? sanitize_text_field(wp_unslash($_POST['slide_autoscalelayers'])) : 'true';
+						$custom_css = isset($_POST['custom_css']) ? sanitize_textarea_field(wp_unslash($_POST['custom_css'])) : '';
+						$slide_autoplay = isset($_POST['slide_autoplay']) ? sanitize_text_field(wp_unslash($_POST['slide_autoplay'])) : 'true';
+						$slide_autoplay_delay = isset($_POST['slide_autoplay_delay']) ? sanitize_text_field(wp_unslash($_POST['slide_autoplay_delay'])) : '5000';
+						$slide_autoplay_hover = isset($_POST['slide_autoplay_hover']) ? sanitize_text_field(wp_unslash($_POST['slide_autoplay_hover'])) : 'pause';
+						$slide_arrows = isset($_POST['slide_arrows']) ? sanitize_text_field(wp_unslash($_POST['slide_arrows'])) : 'true';
+						$slide_fullscreen_btn = isset($_POST['slide_fullscreen_btn']) ? sanitize_text_field(wp_unslash($_POST['slide_fullscreen_btn'])) : 'false';
+						$slide_thumb = isset($_POST['slide_thumb']) ? sanitize_text_field(wp_unslash($_POST['slide_thumb'])) : 'true';
+						$slide_thumb_width = isset($_POST['slide_thumb_width']) ? sanitize_text_field(wp_unslash($_POST['slide_thumb_width'])) : '200';
+						$slide_thumb_height = isset($_POST['slide_thumb_height']) ? sanitize_text_field(wp_unslash($_POST['slide_thumb_height'])) : '100';
+						$slide_thumb_pos = isset($_POST['slide_thumb_pos']) ? sanitize_text_field(wp_unslash($_POST['slide_thumb_pos'])) : 'top';
+						$slide_thumb_arrows = isset($_POST['slide_thumb_arrows']) ? sanitize_text_field(wp_unslash($_POST['slide_thumb_arrows'])) : 'true';
+						$slide_thumb_touchswipe = isset($_POST['slide_thumb_touchswipe']) ? sanitize_text_field(wp_unslash($_POST['slide_thumb_touchswipe'])) : 'true';
+						$videoaction_play = isset($_POST['videoaction_play']) ? sanitize_text_field(wp_unslash($_POST['videoaction_play'])) : 'stopAutoplay';
+						$videoaction_pause = isset($_POST['videoaction_pause']) ? sanitize_text_field(wp_unslash($_POST['videoaction_pause'])) : 'none';
+						$slide_text = isset($_POST['slide_text']) ? sanitize_text_field(wp_unslash($_POST['slide_text'])) : 'true';
+						$slide_text_pos = isset($_POST['slide_text_pos']) ? sanitize_text_field(wp_unslash($_POST['slide_text_pos'])) : 'bottom';
 						$i = 0;
 						$image_ids = array();
 						$image_titles = array();
@@ -527,18 +557,42 @@ if (!class_exists('Awl_Media_Slider')) {
 						$image_ids_val = array_map('sanitize_text_field', $image_ids_val);
 
 						foreach ($image_ids_val as $image_id) {
-							$image_ids[] = sanitize_text_field($_POST['media-slide-ids'][$i]);
-							$image_titles[] = sanitize_text_field($_POST['media-slide-title'][$i]);
-							$image_type[] = sanitize_text_field($_POST['media-slide-type'][$i]);
-							$slide_link[] = sanitize_text_field($_POST['media-slide-link'][$i]);
-							$image_descs[] = sanitize_text_field($_POST['media-slide-desc'][$i]);
+							$image_id = intval($image_id);
+							if ($image_id <= 0) {
+								$i++;
+								continue;
+							}
+
+							// Arbitrary Post Update Prevention & Capability Check
+							if (get_post_type($image_id) !== 'attachment' || !current_user_can('edit_post', $image_id)) {
+								$i++;
+								continue;
+							}
+
+							// Retrieve unslashed and sanitized values safely
+							$title = isset($_POST['media-slide-title'][$i]) ? sanitize_text_field(wp_unslash($_POST['media-slide-title'][$i])) : '';
+							$type = isset($_POST['media-slide-type'][$i]) ? sanitize_text_field(wp_unslash($_POST['media-slide-type'][$i])) : 'i';
+							$link = isset($_POST['media-slide-link'][$i]) ? sanitize_text_field(wp_unslash($_POST['media-slide-link'][$i])) : '';
+							// For description, use wp_kses_post to support basic HTML formatting safely
+							$desc = isset($_POST['media-slide-desc'][$i]) ? wp_kses_post(wp_unslash($_POST['media-slide-desc'][$i])) : '';
+
+							$image_ids[] = $image_id;
+							$image_titles[] = $title;
+							$image_type[] = $type;
+							$slide_link[] = $link;
+							$image_descs[] = $desc;
 
 							$single_image_update = array(
 								'ID' => $image_id,
-								'post_title' => $image_titles[$i],
-								'post_content' => $image_descs[$i],
+								'post_title' => $title,
+								'post_content' => $desc,
 							);
+
+							// Prevent recursive save_post loop
+							remove_action('save_post', array($this, '_ms_save_settings'));
 							wp_update_post($single_image_update);
+							add_action('save_post', array($this, '_ms_save_settings'));
+
 							$i++;
 						}
 
@@ -590,21 +644,23 @@ if (!class_exists('Awl_Media_Slider')) {
 			}
 		}//end _ms_save_settings()
 
-		public function _ms_doc_page()
+		public function _srgallery_menu()
 		{
-			require_once 'docs.php';
+			add_submenu_page('edit.php?post_type=' . MS_PLUGIN_SLUG, __('Our Plugins', 'media-slider'), __('Our Plugins', 'media-slider'), 'manage_options', 'ms-plugins-page', array($this, '_ms_plugins_page'));
+			add_submenu_page('edit.php?post_type=' . MS_PLUGIN_SLUG, __('Our Themes', 'media-slider'), __('Our Themes', 'media-slider'), 'manage_options', 'ms-themes-page', array($this, '_ms_themes_page'));
 		}
 
-		public function _ms_featured_plugin_page()
+		public function _ms_plugins_page()
 		{
-			require_once 'featured-plugins/featured-plugins.php';
+			require_once 'our-plugins.php';
 		}
 
-		// theme page
-		public function _ms_theme_page()
+		public function _ms_themes_page()
 		{
-			require_once 'our-theme/awp-theme.php';
+			require_once 'our-themes.php';
 		}
+
+
 	}//end class
 
 	// register sf scripts
@@ -615,7 +671,6 @@ if (!class_exists('Awl_Media_Slider')) {
 		wp_enqueue_script('jquery');
 		wp_register_script('awl-ms-jquery-sliderPro-min-js', plugin_dir_url(__FILE__) . 'js/jquery.sliderPro.js');
 		wp_register_style('awl-ms-slider-pro-min-css', plugin_dir_url(__FILE__) . 'css/awl-ms-slider-pro.min.css');
-		wp_register_style('awl-ms-bootstrap-css', plugin_dir_url(__FILE__) . 'css/bootstrap.css');
 		// css & JS
 	}
 	add_action('wp_enqueue_scripts', 'awplife_msp_register_scripts');

@@ -1,143 +1,135 @@
-﻿=== Slider for Photos Images Videos ===
+=== Media Slider for Photos Images Videos ===
 Contributors: awordpresslife, razipathhan, hanif0991, muhammadshahid, fkfaisalkhan007, sharikkhan007, zishlife, FARAZFRANK
 Donate link: https://paypal.me/awplife
 Tags: slider, image slider, video slider, responsive slider, slideshow
 Requires at least: 5.0
-Tested up to: 6.9
-Stable tag: 1.5.1
+Tested up to: 7.0
+Stable tag: 1.6.0
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Create responsive image and video sliders with thumbnails, navigation, autoplay, and carousel layouts for your site.
+Create a responsive image slider to display photos, picture galleries, and play video slides on your WordPress website.
 
-== Description ==
+== Media Slider Description for Photos and Videos ==
 
-Media Slider helps you create engaging image and video slideshows for your WordPress site. Whether you want to showcase a photo gallery, display product images, or embed video content, this slider handles it all in one place.
+Media Slider helps you create beautiful slideshows for your site. You can showcase photo galleries, list portfolio items, or embed videos. This easy-to-use plugin organizes all media files in one dashboard.
 
 **View Free Demo:** **[Media Slider](https://awplife.com/demo/media-slider-free-wordpress-plugin)** | **View Pro Demo:** **[Media Slider Pro](https://awplife.com/demo/media-slider-premium/)** 
-**Learn More About Pro:** **[Media Slider Pro](https://awplife.com/wordpress-plugins/media-slider-premium/)** | **Purchase Pro:** **[Buy Slider Factory Pro](https://awplife.com/account/signup/media-slider-premium)**
+**Learn More About Pro:** **[Media Slider Pro](https://awplife.com/wordpress-plugins/media-slider-premium/)** | **Purchase Pro:** **[Buy Media Slider Pro](https://awplife.com/account/signup/media-slider-premium)**
 
-The plugin works with images from your media library and supports YouTube and Vimeo videos. You can add unlimited slides to each slider and display them anywhere using a simple shortcode. Each slide can include a title, description, and custom link.
+You can upload photos from your library. The plugin also supports YouTube videos. Add as many slides as you want. You can display the slider anywhere using a simple shortcode. Each slide allows custom titles, text descriptions, and links.
 
 https://www.youtube.com/watch?v=wBYgUQxpsPs
 
-**What You Can Create:**
+**Key Uses:**
+* Make photo slideshows with smooth fade effects.
+* Display YouTube videos on your site.
+* Build mixed galleries with images and videos.
+* Show multiple slides at once in a carousel.
+* Enable responsive thumbnail navigation.
+* Select full-width or boxed layouts.
 
-* Image slideshows with smooth transitions
-* Video slideshows (YouTube, Vimeo supported)
-* Mixed media sliders (images + videos together)
-* Carousel layouts with multiple visible slides
-* Thumbnail navigation sliders
-* Full-width and boxed sliders
+**Free Version Key Features:**
+* Fully responsive layout fits any screen size.
+* Transition styles like slide and fade.
+* Classic previous and next arrow buttons.
+* Option to display navigation thumbnails below.
+* Custom width and height control fields.
+* Autoplay slide mode with speed settings.
+* Full-screen viewing button.
+* Simple sidebar widget support.
+* Compatible with standard WordPress themes.
+* No coding experience needed.
 
-**Key Features (Free Version):**
+**Premium Version Features:**
+* 4+ unique styles for navigation arrows.
+* 3+ navigation thumbnail layouts.
+* 9+ caption positions for texts.
+* Display image, YouTube and Vimeo videos on your site.
+* Advanced controls to autoplay, loop, or mute videos.
+* Custom breakpoint options for different screens.
+* 3+ image fitting and scaling methods.
+* Force size settings to lock slider dimensions.
+* Fast priority email support.
 
-* Responsive design that adapts to all screen sizes
-* Fade and slide transition effects
-* Previous/Next navigation arrows
-* Thumbnail navigation option
-* Custom slider dimensions
-* Autoplay with adjustable speed
-* Full-screen slider mode
-* Widget support for sidebars
-* Works with any WordPress theme
-* No coding required
-
-**Pro Version Features:**
-
-The premium version includes additional customization options for professional websites:
-
-* 4+ navigation arrow styles
-* 3+ thumbnail display styles
-* 9+ text position options for slide captions
-* Advanced video controls (autoplay, loop, mute)
-* Breakpoint settings for different devices
-* 3+ image scaling modes
-* Force size option to maintain exact dimensions
-* Priority support
-
-
-
-**Free vs Pro Comparison:**
-
+**Free vs Pro Version Comparison:**
 *Free Version:*
-* Unlimited sliders and slides
-* Image and video support
-* Basic navigation (arrows, thumbnails)
-* Fade effect
-* Responsive design
-* Widget ready
-* Shortcode embed
+* Create unlimited slideshow panels.
+* Upload photos and insert video links.
+* Use basic arrows or thumbnails.
+* Apply classic fade slide transitions.
+* Mobile friendly and responsive.
+* Embed via widget.
+* Embed via shortcode.
 
-*Pro Version (Everything in Free, plus):*
-* Multiple navigation styles
-* Multiple thumbnail styles
-* Advanced text positioning
-* Video autoplay and loop controls
-* Device-specific breakpoints
-* Image scaling options
-* Dedicated support
+*Pro Version:*
+* Insert YouTube and Vimeo videos.
+* Multiple navigation designs.
+* Richer thumbnail templates.
+* Custom position options for captions.
+* Video autoplay and mute tools.
+* Advanced mobile breakpoints.
+* Smart image crop layouts.
+* Dedicated developer support.
 
-**How to Use:**
+**Quick Setup Guide:**
+1. Open the Media Slider menu in your dashboard.
+2. Click "Add Media Slider" to create a new post.
+3. Select your photos or add video links.
+4. Save settings and publish the post.
+5. Copy the shortcode and paste it on any page.
 
-1. Go to Media Slider menu in your dashboard
-2. Click "Add New Slider" to create a slider
-3. Upload images or add video URLs
-4. Configure slider settings as needed
-5. Copy the shortcode and paste it in any page or post
+**Getting Support:**
+If you have questions, please visit our [support forum](http://awplife.com/contact/). We reply to all support tickets within 24 to 48 hours.
 
-**Support**
+== Installing the Photo and Video Slider ==
 
-Have questions or found a bug? Post your query on our [support forum](http://awplife.com/contact/). We respond to all requests within 24-48 hours.
+1. Upload the plugin folder to the `/wp-content/plugins/` directory. Or use the WordPress admin installer.
+2. Activate the plugin on the plugins page.
+3. Click "Media Slider" in the sidebar menu.
+4. Click "Add Media Slider" to create a post.
+5. Add photos and adjust settings.
+6. Publish the post to generate the shortcode.
+7. Paste the shortcode into any page or post.
 
-== Installation ==
+== Photo and Video Slider FAQ ==
 
-1. Upload the plugin folder to `/wp-content/plugins/` directory, or install directly through the WordPress plugins screen.
-2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Navigate to Media Slider in your admin menu.
-4. Click "Add New Slider" and start adding your images or videos.
-5. Configure slider settings according to your needs.
-6. Copy the generated shortcode from the slider settings page.
-7. Paste the shortcode into any page, post, or text widget where you want the slider to appear.
+= How do I create a new photo and video slider? =
+Go to the Media Slider menu. Click "Add Media Slider" in your dashboard. Upload photos or add video URLs. Set options and publish. Paste the shortcode on your page.
 
-== Frequently Asked Questions ==
+= Can I mix photos and videos in the same image slider? =
+Yes. Media Slider supports mixed layouts. You can combine library photos with YouTube and Vimeo links in one slider.
 
-= How do I create a new slider? =
-Go to Media Slider in your WordPress dashboard, click "Add New Slider", upload your images or add video URLs, configure the settings, and save. You will get a shortcode to embed the slider anywhere on your site.
+= Is this photo and video slider mobile responsive? =
+Yes. The layouts adjust automatically. Your slideshows look clean on desktops, tablets, and phones.
 
-= Can I add both images and videos in the same slider? =
-Yes, Media Slider supports mixed media. You can combine images from your media library with YouTube and Vimeo videos in a single slider.
+= How do I embed the slider shortcode on my page? =
+Copy the shortcode from the slider editor. Paste it into the editor of any page, post, or widget.
 
-= Is the slider mobile responsive? =
-Yes, the slider automatically adjusts to fit any screen size. Your slides will look good on desktops, tablets, and mobile phones.
+= Can I change navigation arrows in the image slider? =
+The free version has standard arrows. The premium version includes 4+ different arrow designs.
 
-= How do I display the slider on my website? =
-After creating a slider, copy the shortcode shown at the bottom of the slider settings page. Paste this shortcode into any page, post, or text widget where you want the slider to appear.
+= What video slide platforms does the slider support? =
+The plugin supports YouTube and Vimeo videos. Paste the link into the slide URL field.
 
-= Can I customize the navigation arrows? =
-The free version includes standard navigation arrows. The Pro version offers 4+ different arrow styles to match your site design.
+= How many photo and video sliders can I build? =
+You can create as many sliders as you want. Each slider can have unlimited slides.
 
-= What video platforms are supported? =
-The plugin supports YouTube and Vimeo videos. Simply paste the video URL when adding a new slide.
+= Can I add descriptions to photos in the slider? =
+Yes. Every slide supports a title, description, and link. The Pro version offers 9+ text alignment layouts.
 
-= How many sliders can I create? =
-There is no limit. You can create as many sliders as you need, each with unlimited slides.
+= Does the shortcode work with Elementor and other page builders? =
+Yes. The shortcode works in Elementor, Beaver Builder, Divi, and other site builders.
 
-= Can I add text captions to my slides? =
-Yes, each slide supports a title and description. The Pro version offers 9+ text positioning options for precise placement.
+= How do I enable autoplay for photos and video slides? =
+Check the autoplay settings in the options panel. Set the duration timer between slides.
 
-= Does this work with page builders? =
-Yes, you can use the shortcode in any page builder that supports shortcodes, including Elementor, Beaver Builder, and Divi.
+= Can I show thumbnails below the photo slider? =
+Yes. Turn on the thumbnails option in your settings. This navigation works in both versions.
 
-= How do I enable autoplay? =
-In the slider settings, look for the autoplay option and enable it. You can also set the delay time between slides.
-
-= Can I show thumbnails below the slider? =
-Yes, thumbnail navigation is available in both free and Pro versions. Enable it from the slider settings.
-
-= What is the difference between free and Pro version? =
-The free version includes all core features for creating image and video sliders. The Pro version adds more navigation styles, thumbnail styles, advanced text positioning, video controls, and priority support.
+= What is the difference between the free and premium image slider? =
+The free version has core features. The Pro version adds premium navigation arrows, advanced thumbnails, captions, video controls, and support.
 
 == Screenshots ==
 
@@ -147,6 +139,15 @@ The free version includes all core features for creating image and video sliders
 4. Slider Preview - Admin settings
 
 == Changelog ==
+
+= 1.6.0 =
+* Date 25 May 2026
+* Security enhancements: addressed broken access control, CSRF, and SQL injection vulnerabilities.
+* Compliance with WordPress.org Guidelines 2026.
+* PHP 8 compatibility fixes and warning/error guards.
+* Removed unused/bloat subpages (Docs, Featured Plugin, Our Theme).
+* Refactored script/style enqueuing for improved admin performance.
+* Resolved layout conflicts with multiple slider instances.
 
 = 1.5.1 =
 * Text domain error fixed.
@@ -195,6 +196,9 @@ The free version includes all core features for creating image and video sliders
 * Tested with WordPress 6.4.3
 
 == Upgrade Notice ==
+
+= 1.6.0 =
+Critical security updates, PHP 8 compatibility improvements, and menu cleanup. Update highly recommended.
 
 = 1.5.1 =
 Text domain fix and WordPress 6.8.3 compatibility. Update recommended.

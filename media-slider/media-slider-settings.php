@@ -1,44 +1,10 @@
-<?Php
+<?php
 if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly
 }
 
 // load settings
 $post_id = esc_attr($post->ID);
-
-// Check if the data is serialized
-if (is_ms_serialized($decodedData)) {
-
-	// The data is serialized, so unserialize it
-	$slider_settings = unserialize($decodedData);
-	// Optionally, convert the unserialized data to JSON and save it back in base64 encoding for future access
-// This step is optional but recommended to transition your data format
-
-	$jsonEncodedData = json_encode($slider_settings);
-	update_post_meta($post_id, 'awl_ms_settings_' . $post_id, $jsonEncodedData);
-
-	// Now, to use the newly saved format, fetch and decode again
-	$encodedData = get_post_meta($post_id, 'awl_ms_settings_' . $post_id, true);
-	$slider_settings = json_decode(($encodedData), true);
-
-} else {
-	// Assume the data is in JSON format
-	$jsonData = get_post_meta($post_id, 'awl_ms_settings_' . $post_id, true);
-	// Decode the JSON string into an associative array
-	$slider_settings = json_decode($jsonData, true); // Ensure true is passed to get an associative array
-}
-
-// css
-wp_enqueue_style('ms-bootstrap-css', MS_PLUGIN_URL . 'css/ms-bootstrap.css');
-wp_enqueue_style('ms-font-awesome-min-css', MS_PLUGIN_URL . 'css/font-awesome.min.css');
-wp_enqueue_style('ms-styles-css', MS_PLUGIN_URL . 'css/styles.css');
-wp_enqueue_style('ms-go-to-top-css', MS_PLUGIN_URL . 'css/go-to-top.css');
-wp_enqueue_style('ms-toogle-button-css', MS_PLUGIN_URL . 'css/toogle-button.css');
-wp_enqueue_style('awl-em-pe-icon-7-stroke-css', MS_PLUGIN_URL . 'css/pe-icon-7-stroke.css');
-// js
-wp_enqueue_script('jquery');
-wp_enqueue_script('ms-bootstrap-js', MS_PLUGIN_URL . 'js/bootstrap.js', array('jquery'), '', true);
-wp_enqueue_script('ms-go-to-top-js', MS_PLUGIN_URL . 'js/go-to-top.js', array('jquery'), '', true);
 
 ?>
 <style>
@@ -142,7 +108,7 @@ wp_enqueue_script('ms-go-to-top-js', MS_PLUGIN_URL . 'js/go-to-top.js', array('j
 				?>
 
 				<input type="text" class="form-control" id="width" name="width"
-					value="<?php echo esc_html($width); ?>" style="margin-left:25px;"></br></br>
+					value="<?php echo esc_attr($width); ?>" style="margin-left:25px;"></br></br>
 				<p class="ms_comment_settings">
 					<?php esc_html_e('Set the slider frame preview width(Default is 960)', 'media-slider'); ?>
 				</p>
@@ -160,7 +126,7 @@ wp_enqueue_script('ms-go-to-top-js', MS_PLUGIN_URL . 'js/go-to-top.js', array('j
 				}
 				?>
 				<input type="text" class="form-control" id="height" name="height"
-					value="<?php echo esc_html($height); ?>" style="margin-left:25px;"></br></br>
+					value="<?php echo esc_attr($height); ?>" style="margin-left:25px;"></br></br>
 				<p class="ms_comment_settings">
 					<?php esc_html_e('Set the slider frame preview height(Default is 540)', 'media-slider'); ?>
 				</p>
@@ -463,7 +429,7 @@ wp_enqueue_script('ms-go-to-top-js', MS_PLUGIN_URL . 'js/go-to-top.js', array('j
 				?>
 
 				<input type="text" class="form-control" id="slide_visiblesize" name="slide_visiblesize" placeholder=""
-					value="<?php echo esc_html($slide_visiblesize); ?>" style="margin-left:25px;"></br></br>
+					value="<?php echo esc_attr($slide_visiblesize); ?>" style="margin-left:25px;"></br></br>
 				<p class="ms_comment_settings">
 					<?php esc_html_e('Select if the size of the visible area, allowing for more slides to become visible near the selected slide (Default is auto)', 'media-slider'); ?>
 				</p>
@@ -554,7 +520,7 @@ wp_enqueue_script('ms-go-to-top-js', MS_PLUGIN_URL . 'js/go-to-top.js', array('j
 					}
 					?>
 					<textarea name="custom_css" id="custom_css" style="width: 98%; height: 120px;"
-						placeholder="Type direct CSS code here. Don't use <style>...</style> tag."><?php echo $custom_css; ?></textarea><br>
+						placeholder="Type direct CSS code here. Don't use <style>...</style> tag."><?php echo esc_textarea($custom_css); ?></textarea><br>
 				</p>
 				</p>
 			</div>
@@ -623,7 +589,7 @@ wp_enqueue_script('ms-go-to-top-js', MS_PLUGIN_URL . 'js/go-to-top.js', array('j
 						?>
 
 						<input type="range" class="range-slider__range" id="slide_autoplay_delay"
-							name="slide_autoplay_delay" value="<?php echo esc_html($slide_autoplay_delay); ?>" min="0"
+							name="slide_autoplay_delay" value="<?php echo esc_attr($slide_autoplay_delay); ?>" min="0"
 							max="10000" step="100" style="width: 300px !important; margin-left: 10px;">
 						<span class="range-slider__value">5000</span>
 					<p class="ms_comment_settings">
@@ -827,7 +793,7 @@ wp_enqueue_script('ms-go-to-top-js', MS_PLUGIN_URL . 'js/go-to-top.js', array('j
 					?>
 
 					<input type="text" class="form-control" id="slide_thumb_width" name="slide_thumb_width"
-						value="<?php echo esc_html($slide_thumb_width); ?>" style="margin-left:25px;"></br></br>
+						value="<?php echo esc_attr($slide_thumb_width); ?>" style="margin-left:25px;"></br></br>
 					<p class="ms_comment_settings">
 						<?php esc_html_e('Sets the width of the thumbnail(Default is 100)', 'media-slider'); ?>
 					</p>
@@ -847,7 +813,7 @@ wp_enqueue_script('ms-go-to-top-js', MS_PLUGIN_URL . 'js/go-to-top.js', array('j
 					?>
 
 					<input type="text" class="form-control" id="slide_thumb_height" name="slide_thumb_height"
-						value="<?php echo esc_html($slide_thumb_height); ?>" style="margin-left:25px;"></br></br>
+						value="<?php echo esc_attr($slide_thumb_height); ?>" style="margin-left:25px;"></br></br>
 					<p class="ms_comment_settings">
 						<?php esc_html_e('Sets the height of the thumbnail(Default is 80)', 'media-slider'); ?>
 					</p>
@@ -1150,6 +1116,13 @@ wp_enqueue_script('ms-go-to-top-js', MS_PLUGIN_URL . 'js/go-to-top.js', array('j
 		</div>
 	</div>
 </div>
+<p class="text-center" style="text-align: center;">
+	<br>
+	<a href="https://awplife.com/wordpress-plugins/media-slider-premium/" target="_blank"
+		class="button button-primary button-hero"><?php esc_html_e('Buy Premium Version', 'media-slider'); ?></a>
+	<a href="https://awplife.com/demo/media-slider-premium/" target="_blank"
+		class="button button-primary button-hero" style="margin-left: 10px;"><?php esc_html_e('Check Live Demo', 'media-slider'); ?></a>
+</p>
 <?php
 // syntax: wp_nonce_field( 'name_of_my_action', 'name_of_nonce_field' );
 wp_nonce_field('ms_save_settings', 'ms_save_nonce');
@@ -1293,95 +1266,3 @@ wp_nonce_field('ms_save_settings', 'ms_save_nonce');
 		});
 	});
 </script>
-
-</script>
-<p class="text-center">
-	<br>
-	<a href="https://awplife.com/wordpress-plugins/media-slider-premium/" target="_blank"
-		class="button button-primary button-hero load-customize hide-if-no-customize">Buy Premium Version</a>
-	<a href="https://awplife.com/demo/media-slider-premium/" target="_blank"
-		class="button button-primary button-hero load-customize hide-if-no-customize">Check Live Demo</a>
-	<a href="https://awplife.com/demo/media-slider-premium-admin-demo/" target="_blank"
-		class="button button-primary button-hero load-customize hide-if-no-customize">Try Admin Demo</a>
-</p>
-<hr>
-<style>
-	.awp_bale_offer {
-		background-image: url("<?php echo esc_url(plugin_dir_url(__FILE__) . 'image/awp-bale.jpg'); ?>") background-repeat:no-repeat;
-		padding: 30px;
-	}
-
-	.awp_bale_offer h1 {
-		font-size: 35px;
-		color: #006B9F;
-	}
-
-	.awp_bale_offer h3 {
-		font-size: 25px;
-		color: #000000;
-	}
-</style>
-<div class="row awp_bale_offer">
-	<div class="">
-		<h1>
-			<?php esc_html_e('Plugin Bale Offer', 'media-slider'); ?>
-		</h1>
-		<h3>
-			<?php esc_html_e('Get All Premium Plugin ( Personal Licence) in just $179', 'media-slider'); ?>
-		</h3>
-		<h3><strike>$399</strike>
-			<?php esc_html_e('For $179 Only', 'media-slider'); ?>
-		</h3>
-	</div>
-	<div class="">
-		<a href="https://awplife.com/account/signup/all-premium-plugins" target="_blank"
-			class="button button-primary button-hero load-customize hide-if-no-customize">
-			<?php esc_html_e('BUY NOW', 'media-slider'); ?>
-		</a>
-	</div>
-</div>
-<hr>
-<p class="">
-<h2><strong>
-		<?php esc_html_e('Try Our Other Plugins:', 'media-slider'); ?>
-	</strong></h2>
-<br>
-<a href="https://wordpress.org/plugins/portfolio-filter-gallery/" target="_blank"
-	class="button button-primary load-customize hide-if-no-customize">Portfolio Filter Gallery</a>
-<a href="https://wordpress.org/plugins/new-grid-gallery/" target="_blank"
-	class="button button-primary load-customize hide-if-no-customize">Grid Gallery</a>
-<a href="https://wordpress.org/plugins/new-photo-gallery/" target="_blank"
-	class="button button-primary load-customize hide-if-no-customize">Photo Gallery</a>
-<a href="https://wordpress.org/plugins/responsive-slider-gallery/" target="_blank"
-	class="button button-primary load-customize hide-if-no-customize">Responsive Slider Gallery</a>
-<a href="https://wordpress.org/plugins/new-contact-form-widget/" target="_blank"
-	class="button button-primary load-customize hide-if-no-customize">Contact Form Widget</a>
-<a href="https://wordpress.org/plugins/slider-responsive-slideshow/" target="_blank"
-	class="button button-primary load-customize hide-if-no-customize">Slider Responsive Slideshow</a>
-<a href="https://wordpress.org/plugins/new-video-gallery/" target="_blank"
-	class="button button-primary load-customize hide-if-no-customize">Video Gallery</a>
-<a href="https://wordpress.org/plugins/facebook-likebox-widget-and-shortcode/" target="_blank"
-	class="button button-primary load-customize hide-if-no-customize">Facebook Likebox Plugin</a>
-<a href="https://wordpress.org/plugins/new-google-plus-badge/" target="_blank"
-	class="button button-primary load-customize hide-if-no-customize">Google Plus Badge</a><br><br>
-<a href="https://wordpress.org/plugins/new-social-media-widget/" target="_blank"
-	class="button button-primary load-customize hide-if-no-customize">Social Media</a>
-<a href="https://wordpress.org/plugins/media-slider/" target="_blank"
-	class="button button-primary load-customize hide-if-no-customize">Media Slider</a>
-<a href="https://wordpress.org/plugins/weather-effect/" target="_blank"
-	class="button button-primary load-customize hide-if-no-customize">Weather Effect</a>
-<a href="https://wordpress.org/plugins/modal-popup-box/" target="_blank"
-	class="button button-primary load-customize hide-if-no-customize">Modal Popup Box</a>
-<a href="https://wordpress.org/plugins/wp-flickr-gallery/" target="_blank"
-	class="button button-primary load-customize hide-if-no-customize">Flickr gallery</a>
-<a href="https://wordpress.org/plugins/floating-news-headline/" target="_blank"
-	class="button button-primary load-customize hide-if-no-customize">Floating News Headline</a><br><br>
-<a href="https://wordpress.org/plugins/insta-type-gallery/" target="_blank"
-	class="button button-primary load-customize hide-if-no-customize">Instagram type Gallery</a>
-<a href="https://wordpress.org/plugins/new-image-gallery/" target="_blank"
-	class="button button-primary load-customize hide-if-no-customize">Image Gallery</a>
-<a href="https://wordpress.org/plugins/facebook-likebox-widget-and-shortcode/" target="_blank"
-	class="button button-primary load-customize hide-if-no-customize">Facebook Likebox Plugin</a>
-<a href="https://wordpress.org/plugins/testimonial-maker/" target="_blank"
-	class="button button-primary load-customize hide-if-no-customize">Testimonial</a>
-</p>

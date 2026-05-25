@@ -37,7 +37,7 @@ jQuery(function(jQuery) {
 			/**
 			 * Delete Slide Callback Function
 			 */
-            this.ul.on('click', '#remove-media-slide', function() {
+            this.ul.on('click', '.remove-single-media-slide', function() {
                 if (confirm('Are sure to delete this images?')) {
                     jQuery(this).parent().fadeOut(700, function() {
                         jQuery(this).remove();
