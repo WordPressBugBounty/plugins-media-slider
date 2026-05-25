@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) {
 Plugin Name: Media Slider
 Plugin URI: http://awplife.com/
 Description: The best images slider plugin with image and video slideshow support.
-Version: 1.6.0
+Version: 1.6.1
 Author: A WP Life
 Author URI: https://awplife.com/
 Text Domain: media-slider
@@ -43,7 +43,7 @@ if (!class_exists('Awl_Media_Slider')) {
 		{
 
 			// Plugin Version
-			define('MS_PLUGIN_VER', '1.6.0');
+			define('MS_PLUGIN_VER', '1.6.1');
 
 			// Plugin Text Domain
 			define('MSP_TXTDM', 'media-slider');
@@ -437,7 +437,7 @@ if (!class_exists('Awl_Media_Slider')) {
 			</h1>
 			<hr>
 			<?php
-			require_once 'media-slider-settings.php';
+			require_once MS_PLUGIN_DIR . 'media-slider-settings.php';
 		}
 
 		public function _ms_ajax_callback_function($id)
@@ -652,12 +652,12 @@ if (!class_exists('Awl_Media_Slider')) {
 
 		public function _ms_plugins_page()
 		{
-			require_once 'our-plugins.php';
+			require_once MS_PLUGIN_DIR . 'our-plugins.php';
 		}
 
 		public function _ms_themes_page()
 		{
-			require_once 'our-themes.php';
+			require_once MS_PLUGIN_DIR . 'our-themes.php';
 		}
 
 
@@ -675,32 +675,7 @@ if (!class_exists('Awl_Media_Slider')) {
 	}
 	add_action('wp_enqueue_scripts', 'awplife_msp_register_scripts');
 
-	// Plugin Recommend
-	add_action('tgmpa_register', 'MSP_TXTDM_plugin_recommend');
-	function MSP_TXTDM_plugin_recommend()
-	{
-		$plugins = array(
-			array(
-				'name' => 'Photostream Profile For Flickr',
-				'slug' => 'wp-flickr-gallery',
-				'required' => false,
-			),
-			array(
-				'name' => 'Contact Form Widget',
-				'slug' => 'new-contact-form-widget',
-				'required' => false,
-			),
-			array(
-				'name' => 'Testimonial – Customer Feedback',
-				'slug' => 'testimonial-maker',
-				'required' => false,
-			),
-		);
-		tgmpa($plugins);
-	}
-
 	$ms_gallery_object = new Awl_Media_Slider();
-	require_once 'shortcode.php';
-	require_once 'class-tgm-plugin-activation.php';
+	require_once MS_PLUGIN_DIR . 'shortcode.php';
 }
 ?>

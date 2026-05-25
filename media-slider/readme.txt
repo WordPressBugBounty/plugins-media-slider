@@ -4,7 +4,7 @@ Donate link: https://paypal.me/awplife
 Tags: slider, image slider, video slider, responsive slider, slideshow
 Requires at least: 5.0
 Tested up to: 7.0
-Stable tag: 1.6.0
+Stable tag: 1.6.1
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -140,6 +140,12 @@ The free version has core features. The Pro version adds premium navigation arro
 
 == Changelog ==
 
+= 1.6.1 =
+* Date 25 May 2026
+* Fixed fatal errors during plugin activation by converting relative require statements to absolute paths.
+* Removed TGM Plugin Activation library and all related recommending functions to reduce bloat.
+* Improved shortcode file requirement path portability.
+
 = 1.6.0 =
 * Date 25 May 2026
 * Security enhancements: addressed broken access control, CSRF, and SQL injection vulnerabilities.
@@ -196,6 +202,9 @@ The free version has core features. The Pro version adds premium navigation arro
 * Tested with WordPress 6.4.3
 
 == Upgrade Notice ==
+
+= 1.6.1 =
+Fixed path resolution activation errors and removed unused TGMPA library code.
 
 = 1.6.0 =
 Critical security updates, PHP 8 compatibility improvements, and menu cleanup. Update highly recommended.

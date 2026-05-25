@@ -24,6 +24,6 @@ function awl_media_slider_shortcode( $atts ) {
 
 	ob_start();
 	// output code file
-	require 'media-slider-code.php';
+	require MS_PLUGIN_DIR . 'media-slider-code.php';
 	return ob_get_clean();
 }
