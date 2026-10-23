@@ -16,7 +16,7 @@ Create a responsive image slider to display photos, picture galleries, and play 
 Media Slider helps you create beautiful slideshows for your site. You can showcase photo galleries, list portfolio items, or embed videos. This easy-to-use plugin organizes all media files in one dashboard.
 
 **View Free Demo:** **[Media Slider](https://awplife.com/demo/media-slider-free-wordpress-plugin)** | **View Pro Demo:** **[Media Slider Pro](https://awplife.com/demo/media-slider-premium/)** 
-**Learn More About Pro:** **[Media Slider Pro](https://awplife.com/wordpress-plugins/media-slider-premium/)** | **Purchase Pro:** **[Buy Media Slider Pro](https://awplife.com/account/signup/media-slider-premium)**
+**Learn More About Pro:** **[Media Slider Pro](https://awplife.com/wordpress-plugins/media-slider-wordpress-plugin/)** | **Purchase Pro:** **[Buy Media Slider Pro](https://awplife.com/account/signup/media-slider-premium)**
 
 You can upload photos from your library. The plugin also supports YouTube videos. Add as many slides as you want. You can display the slider anywhere using a simple shortcode. Each slide allows custom titles, text descriptions, and links.
 
